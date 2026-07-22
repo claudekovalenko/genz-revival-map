@@ -11,6 +11,8 @@ const originColor: Record<RevivalEvent["origin"], string> = {
   organized: "#0284c7",
 };
 
+const nplColor = "#db2777";
+
 const categoryLabel: Record<RevivalEvent["category"], string> = {
   campus: "Campus gathering",
   "national-moment": "National moment",
@@ -102,7 +104,7 @@ export default function USMap({ events }: Props) {
           >
             <circle
               r={5}
-              fill={originColor[e.origin]}
+              fill={e.tags.includes("npl") ? nplColor : originColor[e.origin]}
               stroke="#fff"
               strokeWidth={1.5}
               style={{ cursor: "pointer" }}
@@ -129,6 +131,10 @@ export default function USMap({ events }: Props) {
         <span className="flex items-center gap-1.5">
           <span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: originColor.organized }} />
           Organized (touring ministry)
+        </span>
+        <span className="flex items-center gap-1.5">
+          <span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: nplColor }} />
+          No Place Left (disciple-making network)
         </span>
         <span className="flex items-center gap-1.5">
           <span className="inline-block w-2.5 h-2.5 rounded" style={{ background: "#7c3aed" }} />
