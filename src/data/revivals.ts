@@ -92,6 +92,34 @@ export const revivals: RevivalEvent[] = [
     ],
   },
   {
+    id: "no-place-left-new-braunfels",
+    name: "No Place Left New Braunfels (local chapter, unverified)",
+    city: "New Braunfels",
+    state: "Texas",
+    stateCode: "TX",
+    lat: 29.703,
+    lon: -98.1245,
+    year: 2026,
+    startDate: "2026-07-22",
+    category: "movement",
+    origin: "organic",
+    denominationTradition: "Interdenominational evangelical (No Place Left-affiliated local chapter)",
+    summary:
+      "A Facebook page named 'No Place Left New Braunfels' operates out of New Braunfels, TX. That is the entire confirmed fact set: the page's name and self-reported location. No independent news source, founding date, attendance figure, or activity record was found for it — only the page's existence.",
+    followThrough:
+      "Included at the user's request as a documented NPL-affiliated presence, not as a verified event. The 2026-07-22 date above is when this page was identified during research, not a claimed founding or event date — nothing here should be read as confirming when the chapter started or what it has actually done. Flagged low-confidence; treat as a lead to verify (e.g. by opening the Facebook page directly for post dates and activity), not a sourced data point on par with the rest of this map.",
+    demographicsNote: "No demographic data available — page name and location only.",
+    tags: ["npl", "infrastructure", "no-single-event", "unverified", "low-confidence", "social-media-only"],
+    articles: [
+      {
+        title: "No Place Left New Braunfels",
+        source: "Facebook",
+        url: "https://www.facebook.com/people/No-Place-Left-New-Braunfels/100067412504527/",
+        date: "2026-07-22",
+      },
+    ],
+  },
+  {
     id: "the-call-2012",
     name: "The Call: Southern California student rally",
     city: "Los Angeles",
