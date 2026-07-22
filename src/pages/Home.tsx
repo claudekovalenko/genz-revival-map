@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import USMap from "../components/USMap";
 import YearSlider from "../components/YearSlider";
 import OriginFilter, { type OriginFilterValue } from "../components/OriginFilter";
+import NplFilter from "../components/NplFilter";
 import { revivals } from "../data/revivals";
 import { filterByYear, maxYear, minYear, totalDocumentedBaptisms, type YearMode } from "../data/utils";
 
@@ -20,35 +21,21 @@ export default function Home() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8 flex flex-col gap-6">
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          <h1 className="text-2xl md:text-3xl font-semibold tracking-tight">
-            Where has Gen Z revival activity spiked?
-          </h1>
-          <p className="text-sm text-black/60 dark:text-white/50 mt-1 max-w-2xl">
-            A hand-curated map of publicly reported Protestant revival activity linked to Gen Z in the U.S. —
-            campus outpourings, national moments, and the movements that followed. Hover a state or dot for a
-            quick read, click to go deeper. Every entry cites its sources.
-          </p>
-        </div>
-        <button
-          type="button"
-          title="Show only No Place Left / e3 Partners disciple-making network entries"
-          onClick={() => setNpl((v) => !v)}
-          aria-pressed={npl}
-          className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
-            npl
-              ? "bg-black text-white border-black dark:bg-white dark:text-black dark:border-white"
-              : "border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/10"
-          }`}
-        >
-          NPL
-        </button>
+      <div>
+        <h1 className="text-2xl md:text-3xl font-semibold tracking-tight">
+          Where has Gen Z revival activity spiked?
+        </h1>
+        <p className="text-sm text-black/60 dark:text-white/50 mt-1 max-w-2xl">
+          A hand-curated map of publicly reported Protestant revival activity linked to Gen Z in the U.S. —
+          campus outpourings, national moments, and the movements that followed. Hover a state or dot for a
+          quick read, click to go deeper. Every entry cites its sources.
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <YearSlider year={year} minYear={minYear} maxYear={maxYear} mode={mode} onYearChange={setYear} onModeChange={setMode} />
         <OriginFilter value={origin} onChange={setOrigin} />
+        <NplFilter value={npl} onChange={setNpl} />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
