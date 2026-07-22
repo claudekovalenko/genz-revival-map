@@ -10,11 +10,13 @@ export default function Home() {
   const [year, setYear] = useState(maxYear);
   const [mode, setMode] = useState<YearMode>("cumulative");
   const [origin, setOrigin] = useState<OriginFilterValue>("all");
+  const [npl, setNpl] = useState(false);
 
   const filtered = useMemo(() => {
     const byYear = filterByYear(revivals, year, mode);
-    return origin === "all" ? byYear : byYear.filter((e) => e.origin === origin);
-  }, [year, mode, origin]);
+    const byOrigin = origin === "all" ? byYear : byYear.filter((e) => e.origin === origin);
+    return npl ? byOrigin.filter((e) => e.tags.includes("npl")) : byOrigin;
+  }, [year, mode, origin, npl]);
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8 flex flex-col gap-6">
@@ -31,7 +33,7 @@ export default function Home() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <YearSlider year={year} minYear={minYear} maxYear={maxYear} mode={mode} onYearChange={setYear} onModeChange={setMode} />
-        <OriginFilter value={origin} onChange={setOrigin} />
+        <OriginFilter value={origin} onChange={setOrigin} npl={npl} onNplChange={setNpl} />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
