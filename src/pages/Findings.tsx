@@ -64,6 +64,13 @@ const findings: Finding[] = [
       "Two things follow. First, the baptism surge is not just hype — it shows up in the most conservative data source available. Second, the mass-baptism model proves large-scale public commitment can be organized on a calendar (Pentecost Sunday, every year) rather than waiting for spontaneous moments — but note these are all-ages events; connecting them specifically to Gen Z discipleship is the unproven step, and the falling-membership backdrop says conversions aren't yet translating into retained members.",
   },
   {
+    claim: "No Place Left overlaps with the 2023 campus wave in one place — geography, not time or documented cause.",
+    evidence:
+      "The only No Place Left entry on this map is the MetaCamp training hub, founded in Dadeville, AL in March 2012. Eleven years later, Alabama is also home to two of the largest 2023 organic/organized campus entries: the Samford University Chapel Revival and Unite Auburn. No article in either entry's sources mentions No Place Left, MetaCamp, or DMM/CPM methodology, and NPL's own framing (fourth-generation church multiplication) has no reporting equivalent for either Alabama campus event.",
+    soWhat:
+      "A shared state eleven years apart is not a documented link — it's the kind of coincidence that's easy to over-read on a map. Treat this as a specific, testable question rather than a finding: did any Alabama-trained NPL disciple-maker touch the Samford or Auburn networks? Nothing sourced here says yes. Someone closer to Alabama campus ministry could actually check; until then this is an open question, not a claim.",
+  },
+  {
     claim: "A small number of repeat organizers account for a large share of the organized events.",
     evidence:
       "Lou Engle's network produced The Call (2012), Azusa Now (2016), and The Send (2019) — three of the largest organized entries in this dataset, spanning seven years. Jennie Allen's IF:Gathering (2014) connects directly to her co-hosting the Texas A&M Unite US event a decade later (2024).",
