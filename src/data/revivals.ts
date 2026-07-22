@@ -27,7 +27,7 @@ export const revivals: RevivalEvent[] = [
       "This is the clearest 'infrastructure' entry in the dataset: it's training methodology, not a dated spike. No sourced evidence connects it directly to Unite US or the 2023-2025 campus wave specifically — it's included as a parallel, real disciple-making network operating through the same years, not a confirmed cause of the campus events elsewhere on this map.",
     demographicsNote:
       "Trains disciple-makers of all ages, not youth-specific; no independent demographic data published. Included for methodology context, not as a Gen Z data point.",
-    tags: ["infrastructure", "disciple-making-movement", "no-single-event", "unverified-link-to-campus-wave"],
+    tags: ["npl", "infrastructure", "disciple-making-movement", "no-single-event", "unverified-link-to-campus-wave"],
     articles: [
       {
         title: "No Place Left as the Benchmark",
