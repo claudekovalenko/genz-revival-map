@@ -11,29 +11,12 @@ const options: { value: OriginFilterValue; label: string; hint: string }[] = [
 type Props = {
   value: OriginFilterValue;
   onChange: (value: OriginFilterValue) => void;
-  npl: boolean;
-  onNplChange: (value: boolean) => void;
 };
 
-export default function OriginFilter({ value, onChange, npl, onNplChange }: Props) {
+export default function OriginFilter({ value, onChange }: Props) {
   return (
     <div className="w-full bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl px-4 py-3 flex flex-col gap-2">
-      <div className="flex items-center justify-between gap-2">
-        <span className="text-sm font-medium">How did it start?</span>
-        <button
-          type="button"
-          title="Show only No Place Left disciple-making network entries"
-          onClick={() => onNplChange(!npl)}
-          aria-pressed={npl}
-          className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
-            npl
-              ? "bg-black text-white border-black dark:bg-white dark:text-black dark:border-white"
-              : "border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/10"
-          }`}
-        >
-          NPL
-        </button>
-      </div>
+      <span className="text-sm font-medium">How did it start?</span>
       <div className="flex flex-wrap gap-2">
         {options.map((opt) => (
           <button

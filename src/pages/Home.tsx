@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import USMap from "../components/USMap";
 import YearSlider from "../components/YearSlider";
 import OriginFilter, { type OriginFilterValue } from "../components/OriginFilter";
+import NplFilter from "../components/NplFilter";
 import { revivals } from "../data/revivals";
 import { filterByYear, maxYear, minYear, totalDocumentedBaptisms, type YearMode } from "../data/utils";
 
@@ -31,9 +32,10 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <YearSlider year={year} minYear={minYear} maxYear={maxYear} mode={mode} onYearChange={setYear} onModeChange={setMode} />
-        <OriginFilter value={origin} onChange={setOrigin} npl={npl} onNplChange={setNpl} />
+        <OriginFilter value={origin} onChange={setOrigin} />
+        <NplFilter value={npl} onChange={setNpl} />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">

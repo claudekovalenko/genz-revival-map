@@ -21,7 +21,7 @@ export const revivals: RevivalEvent[] = [
     origin: "organized",
     denominationTradition: "Interdenominational evangelical (Disciple-Making Movement / Church Planting Movement network)",
     summary:
-      "Not a single gathering — a training methodology. 'No Place Left' (named for Acts 19:10, 'no place left' unreached) is a decentralized global coalition applying Disciple-Making Movement (DMM) and Church Planting Movement (CPM) strategy: train a believer to disciple others, who disciple others, tracking the count as 'generations.' The coalition's own benchmark: a 'movement' isn't declared until at least 100 churches have multiplied to a fourth generation or beyond. Curtis Sergeant — a key DMM trainer whose earlier work in China is credited with reaching 10 million people in a decade — founded MetaCamp, a US disciple-making training center, in Dadeville, AL in March 2012.",
+      "Not a single gathering — a training methodology. 'No Place Left' (named for Acts 19:10, 'no place left' unreached) is a decentralized global coalition applying Disciple-Making Movement (DMM) and Church Planting Movement (CPM) strategy: train a believer to disciple others, who disciple others, tracking the count as 'generations.' The coalition's own benchmark: a 'movement' isn't declared until at least 100 churches have multiplied to a fourth generation or beyond. Curtis Sergeant — a key DMM trainer whose earlier work in China is credited with reaching 10 million people in a decade — founded MetaCamp, a US disciple-making training center, in Dadeville, AL in March 2012. Before MetaCamp, Sergeant served three years as International VP at e3 Partners (see the separate e3 Partners USA entry) — the one documented personnel link between the two networks in this dataset.",
     reportedBaptisms: "Not tallied centrally — baptism is treated as one step in an ongoing discipleship chain, not a standalone event",
     followThrough:
       "This is the clearest 'infrastructure' entry in the dataset: it's training methodology, not a dated spike. No sourced evidence connects it directly to Unite US or the 2023-2025 campus wave specifically — it's included as a parallel, real disciple-making network operating through the same years, not a confirmed cause of the campus events elsewhere on this map.",
@@ -39,6 +39,54 @@ export const revivals: RevivalEvent[] = [
         title: "MetaCamp Discipleship",
         source: "MetaCamp",
         url: "https://metacamp.org/metacamp-discipleship/",
+        date: "2024-01-01",
+      },
+      {
+        title: "About Curtis Sergeant",
+        source: "MetaCamp",
+        url: "https://metacamp.org/about-curtis-sergeant/",
+        date: "2024-01-01",
+      },
+    ],
+  },
+  {
+    id: "e3-partners-usa-noplaceleft",
+    name: "e3 Partners USA (#NoPlaceLeft coalition member)",
+    city: "Plano",
+    state: "Texas",
+    stateCode: "TX",
+    lat: 33.0198,
+    lon: -96.6989,
+    year: 2012,
+    startDate: "2012-01-01",
+    category: "movement",
+    origin: "organized",
+    denominationTradition: "Interdenominational evangelical (evangelism / church-planting mission agency, founded 1987)",
+    summary:
+      "Not a single gathering — a Plano, TX-headquartered mission agency (founded 1987) whose U.S. arm operates under the explicit motto '#NoPlaceLeft' and is itself a member of the NoPlaceLeft coalition. e3 Partners trains believers and campus missionaries (its 'Campus Movement Practitioner' role, and 'Team Second' with I Am Second) in the same disciple-making-movement (DMM) methodology as MetaCamp. Curtis Sergeant, who founded MetaCamp (see that entry), served three years as e3 Partners' International VP immediately before relocating to Alabama to start MetaCamp — the one documented personnel bridge between the two networks. Dated to 2012 to align with that transition; e3 Partners' own USA #NoPlaceLeft framing isn't independently dated by a third-party source.",
+    reportedBaptisms: "Not tallied centrally — same discipleship-chain approach as MetaCamp/NPL, not event-based",
+    followThrough:
+      "Included because the Curtis Sergeant personnel link to MetaCamp is real and sourced, not because any article connects e3 Partners to the 2023-2025 campus wave elsewhere on this map. No source here ties e3 Partners' campus work to Asbury, Unite US, or any specific campus entry — treat this as parallel infrastructure, same caveat as the MetaCamp entry.",
+    demographicsNote:
+      "Deploys campus missionaries and athlete-focused outreach (Team Second/I Am Second) but publishes no independent Gen Z-specific demographic data. Included for methodology/network context, not as a Gen Z data point.",
+    tags: ["npl", "e3-partners", "infrastructure", "disciple-making-movement", "no-single-event", "unverified-link-to-campus-wave"],
+    articles: [
+      {
+        title: "USA",
+        source: "e3 Partners",
+        url: "https://e3partners.org/usa/",
+        date: "2024-01-01",
+      },
+      {
+        title: "University",
+        source: "e3 Partners",
+        url: "https://e3partners.org/university/",
+        date: "2024-01-01",
+      },
+      {
+        title: "e3 Partners Ministry (Accredited Organization Profile)",
+        source: "ECFA",
+        url: "https://www.ecfa.org/MemberProfile.aspx?ID=10734",
         date: "2024-01-01",
       },
     ],
