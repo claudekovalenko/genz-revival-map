@@ -71,6 +71,13 @@ const findings: Finding[] = [
       "If NPL infrastructure caused organic revival, its presence should predict where outbreaks happen — it doesn't. Seven of nine organic-outbreak states have no sourced NPL chapter at all, and NPL's one non-Texas, non-Alabama chapter (Jacksonville) sits in a state with no organic entry. Read this as evidence the two phenomena are largely independent tracks — steady disciple-making infrastructure in one set of places, unplanned spiritual spikes in a different, barely-overlapping set — not as NPL either causing or failing to cause revival. Someone closer to either network could still check for undocumented links; nothing sourced here confirms one.",
   },
   {
+    claim: "People are opening the Bible more than they have in over a decade — but trusting it less than they used to.",
+    evidence:
+      "Barna's State of the Church 2025 report found weekly Bible reading among self-identified Christians at its highest point in over a decade, driven by young adults and — notably — young men, a demographic that has historically trailed women in Scripture reading. At the same time, only 36% of adults strongly agree the Bible is totally accurate in what it teaches, down from 43% in 2000. Barna CEO David Kinnaman's summary: \"engagement is outpacing conviction.\" That tracks with this map's own Scripture-engagement trend, which shows Gen Z as the least Scripture-engaged generation (10-14%) even through the same 2023-2025 window covered by the campus wave.",
+    soWhat:
+      "Rising Bible sales, app installs, and reading rates are a real, sourced trend — but they measure exposure, not belief, and Gen Z remains both the most phone-dependent generation on record (surveys put self-reported phone addiction at 69-83%) and the least Scripture-engaged by Barna's own classification. The opportunity isn't getting more people to open the app or the book — that's already happening. It's building whatever comes after opening it: teaching, community, and repetition that turns a five-minute YouVersion streak into actual conviction, before the same attention that opened the Bible gets pulled back to the other six-plus hours a day already spoken for.",
+  },
+  {
     claim: "A small number of repeat organizers account for a large share of the organized events.",
     evidence:
       "Lou Engle's network produced The Call (2012), Azusa Now (2016), and The Send (2019) — three of the largest organized entries in this dataset, spanning seven years. Jennie Allen's IF:Gathering (2014) connects directly to her co-hosting the Texas A&M Unite US event a decade later (2024).",

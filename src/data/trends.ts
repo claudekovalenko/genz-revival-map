@@ -159,4 +159,33 @@ export const trends: TrendSeries[] = [
       { year: 2024, value: 11 },
     ],
   },
+  {
+    id: "bible-total-accuracy-belief",
+    title: "Adults who strongly agree the Bible is totally accurate in what it teaches",
+    unit: "% strongly agreeing",
+    source: {
+      title: "How Millennials and Gen Z Are Driving a Bible Reading Comeback",
+      source: "Barna Group (State of the Church 2025)",
+      url: "https://www.barna.com/trends/bible-reading-trends/",
+      date: "2025-11-01",
+    },
+    note: "Whole-population belief measure, tracked against a rising reading rate driven by young adults and young men specifically. Barna CEO David Kinnaman's framing for the gap: \"engagement is outpacing conviction\" — more people opening the Bible, fewer strongly affirming its accuracy.",
+    points: [
+      { year: 2000, value: 43 },
+      { year: 2025, value: 36 },
+    ],
+  },
+  {
+    id: "genz-phone-vs-scripture",
+    title: "Gen Z reporting an unhealthy relationship with their phone",
+    unit: "% of Gen Z",
+    source: {
+      title: "83% of Gen Z say they have an unhealthy relationship with their phone, data shows",
+      source: "LiveNOW from FOX (citing BePresent survey)",
+      url: "https://www.livenowfox.com/news/gen-z-phone-addiction-bepresent-2024",
+      date: "2024-01-01",
+    },
+    note: "Cited alongside the Scripture-engagement trend above, not as a matched study — no single source directly compares phone time to Bible-reading time for the same Gen Z sample. Other surveys put Gen Z self-reported phone addiction anywhere from 69% to 83% depending on how the question is asked and average daily screen time around 6.5 hours; treat this as a directional read (heavy phone dependency, low Scripture engagement, same generation, same years), not a precise ratio.",
+    points: [{ year: 2024, value: 83 }],
+  },
 ];

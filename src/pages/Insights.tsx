@@ -43,6 +43,8 @@ export default function Insights() {
   const pewNones = trends.find((t) => t.id === "pew-religious-nones")!;
   const nonesByGen = trends.find((t) => t.id === "nones-by-generation")!;
   const scriptureEngagement = trends.find((t) => t.id === "genz-scripture-engagement")!;
+  const bibleAccuracy = trends.find((t) => t.id === "bible-total-accuracy-belief")!;
+  const phoneVsScripture = trends.find((t) => t.id === "genz-phone-vs-scripture")!;
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8 flex flex-col gap-10">
@@ -239,6 +241,36 @@ export default function Insights() {
           </ResponsiveContainer>
           {scriptureEngagement.note && (
             <p className="text-xs text-black/50 dark:text-white/40 mt-2">{scriptureEngagement.note}</p>
+          )}
+        </ChartCard>
+
+        <ChartCard title={bibleAccuracy.title} subtitle={`Source: ${bibleAccuracy.source.source}`}>
+          <ResponsiveContainer width="100%" height={220}>
+            <BarChart data={bibleAccuracy.points.map((p) => ({ year: p.year, value: p.value }))}>
+              <CartesianGrid strokeDasharray="3 3" opacity={0.2} />
+              <XAxis dataKey="year" />
+              <YAxis unit="%" />
+              <Tooltip />
+              <Bar dataKey="value" fill={barColor} radius={[4, 4, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+          {bibleAccuracy.note && (
+            <p className="text-xs text-black/50 dark:text-white/40 mt-2">{bibleAccuracy.note}</p>
+          )}
+        </ChartCard>
+
+        <ChartCard title={phoneVsScripture.title} subtitle={`Source: ${phoneVsScripture.source.source}`}>
+          <ResponsiveContainer width="100%" height={220}>
+            <BarChart data={phoneVsScripture.points.map((p) => ({ year: p.year, value: p.value }))}>
+              <CartesianGrid strokeDasharray="3 3" opacity={0.2} />
+              <XAxis dataKey="year" />
+              <YAxis unit="%" />
+              <Tooltip />
+              <Bar dataKey="value" fill={barColor} radius={[4, 4, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+          {phoneVsScripture.note && (
+            <p className="text-xs text-black/50 dark:text-white/40 mt-2">{phoneVsScripture.note}</p>
           )}
         </ChartCard>
       </div>
