@@ -64,11 +64,11 @@ const findings: Finding[] = [
       "Two things follow. First, the baptism surge is not just hype — it shows up in the most conservative data source available. Second, the mass-baptism model proves large-scale public commitment can be organized on a calendar (Pentecost Sunday, every year) rather than waiting for spontaneous moments — but note these are all-ages events; connecting them specifically to Gen Z discipleship is the unproven step, and the falling-membership backdrop says conversions aren't yet translating into retained members.",
   },
   {
-    claim: "No Place Left overlaps with the 2023 campus wave in one place — geography, not time or documented cause.",
+    claim: "No Place Left's footprint barely overlaps with where spontaneous revival actually happened.",
     evidence:
-      "The only No Place Left entry on this map is the MetaCamp training hub, founded in Dadeville, AL in March 2012. Eleven years later, Alabama is also home to two of the largest 2023 organic/organized campus entries: the Samford University Chapel Revival and Unite Auburn. No article in either entry's sources mentions No Place Left, MetaCamp, or DMM/CPM methodology, and NPL's own framing (fourth-generation church multiplication) has no reporting equivalent for either Alabama campus event.",
+      "This map now has four No Place Left / DMM-affiliated entries — MetaCamp (Dadeville, AL, 2012), e3 Partners (Plano, TX, 2012), a Jacksonville, FL chapter via First Coast United (2024), and an unverified New Braunfels, TX Facebook page (2026). Organic outbreaks, by contrast, happened in KY, OH, AL, TN, TX, LA, VA, IN, and UT. Only two states — AL and TX — appear on both lists, and even there it's the same coincidence noted before: no article connects MetaCamp to Samford or Auburn, and no source connects e3 Partners or New Braunfels to the Texas A&M or Waco entries. Jacksonville, FL has an NPL chapter but zero organic entries on this map; Kentucky (Asbury), Ohio (Cedarville, Columbus), Louisiana, Virginia, Indiana, and Utah have organic entries but zero documented NPL presence.",
     soWhat:
-      "A shared state eleven years apart is not a documented link — it's the kind of coincidence that's easy to over-read on a map. Treat this as a specific, testable question rather than a finding: did any Alabama-trained NPL disciple-maker touch the Samford or Auburn networks? Nothing sourced here says yes. Someone closer to Alabama campus ministry could actually check; until then this is an open question, not a claim.",
+      "If NPL infrastructure caused organic revival, its presence should predict where outbreaks happen — it doesn't. Seven of nine organic-outbreak states have no sourced NPL chapter at all, and NPL's one non-Texas, non-Alabama chapter (Jacksonville) sits in a state with no organic entry. Read this as evidence the two phenomena are largely independent tracks — steady disciple-making infrastructure in one set of places, unplanned spiritual spikes in a different, barely-overlapping set — not as NPL either causing or failing to cause revival. Someone closer to either network could still check for undocumented links; nothing sourced here confirms one.",
   },
   {
     claim: "A small number of repeat organizers account for a large share of the organized events.",
@@ -115,7 +115,7 @@ export default function Findings() {
       <div className="bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-5">
         <h2 className="font-semibold mb-2">The honest limit on all of this</h2>
         <p className="text-sm leading-relaxed text-black/70 dark:text-white/60">
-          This is 30 curated, press-covered events and a handful of national surveys — not a controlled study.
+          This is 42 curated, press-covered events and a handful of national surveys — not a controlled study.
           It can tell you what got covered and what patterns show up inside that coverage; it can't tell you the
           true rate of organic revival versus organized events nationwide, because no one is counting the events
           that never got press. Treat every "so what" above as the strongest read of the evidence gathered here,
