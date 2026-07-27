@@ -120,6 +120,35 @@ export const revivals: RevivalEvent[] = [
     ],
   },
   {
+    id: "no-place-left-first-coast-jacksonville",
+    name: "No Place Left / First Coast United (Jacksonville chapter)",
+    city: "Jacksonville",
+    state: "Florida",
+    stateCode: "FL",
+    lat: 30.3322,
+    lon: -81.6557,
+    year: 2024,
+    startDate: "2024-01-01",
+    category: "movement",
+    origin: "organized",
+    denominationTradition: "Interdenominational evangelical (No Place Left-affiliated local disciple-making network)",
+    summary:
+      "First Coast United, a Jacksonville, FL-area ministry collaborative, runs a dedicated 'No Place Left' page describing local disciple-making-movement (DMM) activity — the same training-and-multiplication approach as MetaCamp and e3 Partners, applied at city scale rather than as a single event. No independent news coverage, attendance figure, or generation count was found; the page itself is the only source.",
+    reportedBaptisms: "Not tallied centrally — DMM approach tracks discipleship generations, not event-based baptism counts",
+    followThrough:
+      "Same caveat as the other NPL infrastructure entries: this is a real, named local expression of the network, not a dated spike, and no source ties it to any organic campus event elsewhere on this map. Dated to 2024 as the year the page was identified during research, not a claimed founding date — treat the year as approximate.",
+    demographicsNote: "No independent demographic data published for this chapter specifically.",
+    tags: ["npl", "infrastructure", "disciple-making-movement", "no-single-event", "unverified-link-to-campus-wave", "low-confidence"],
+    articles: [
+      {
+        title: "No Place Left",
+        source: "First Coast United",
+        url: "https://firstcoastunited.org/noplaceleft/",
+        date: "2024-01-01",
+      },
+    ],
+  },
+  {
     id: "the-call-2012",
     name: "The Call: Southern California student rally",
     city: "Los Angeles",
