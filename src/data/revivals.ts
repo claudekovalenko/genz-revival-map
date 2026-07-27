@@ -149,6 +149,41 @@ export const revivals: RevivalEvent[] = [
     ],
   },
   {
+    id: "no-place-left-florida-gospel-push",
+    name: "#NoPlaceLeft Florida (Gospel Push, South Florida)",
+    city: "Miami",
+    state: "Florida",
+    stateCode: "FL",
+    lat: 25.7617,
+    lon: -80.1918,
+    year: 2025,
+    startDate: "2025-01-01",
+    category: "movement",
+    origin: "organized",
+    denominationTradition: "Interdenominational evangelical (No Place Left-affiliated statewide network)",
+    summary:
+      "A statewide No Place Left chapter running annual 'Gospel Push' outreach events focused on South Florida neighborhoods and specific people groups (the site names Jewish, Arab, Vietnamese, and Spanish-speaking communities), looking for 'houses of peace' willing to host repeat gospel conversations. Notably, its own site names e3 Partners as a direct event partner alongside local church planters — the clearest documented link found anywhere in this dataset between two of the separate NPL/DMM-style networks (NoPlaceLeft Florida and e3 Partners) actually working the same event together.",
+    reportedBaptisms: "Not tallied centrally — outreach/entry-strategy events, not baptism events",
+    followThrough:
+      "Unlike the MetaCamp/e3 Partners personnel link (one shared executive, 2012) or the other NPL entries (no cross-network link at all), this is a same-year, same-event partnership — still not connected to any organic campus entry on this map, but it is real evidence NPL-affiliated networks actively coordinate with each other, not just share a training philosophy.",
+    demographicsNote: "Neighborhood-level outreach, not age-specific; no Gen Z-specific data published.",
+    tags: ["npl", "e3-partners", "infrastructure", "no-single-event", "unverified-link-to-campus-wave", "cross-network-link"],
+    articles: [
+      {
+        title: "#NoPlaceLeft Florida - Gospel Push",
+        source: "#NoPlaceLeft Florida",
+        url: "https://www.noplaceleftflorida.com/GospelPush2025",
+        date: "2025-01-01",
+      },
+      {
+        title: "#NoPlaceLeft Florida - About Us",
+        source: "#NoPlaceLeft Florida",
+        url: "https://www.noplaceleftflorida.com/about-us",
+        date: "2025-01-01",
+      },
+    ],
+  },
+  {
     id: "the-call-2012",
     name: "The Call: Southern California student rally",
     city: "Los Angeles",
