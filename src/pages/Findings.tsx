@@ -43,11 +43,11 @@ const findings: Finding[] = [
       "This is the biggest gap in the entire space, which makes it the biggest opportunity: whoever builds the actual discipleship/follow-up infrastructure — small groups, local church handoffs, mentorship — and measures it, will know something real about whether any of this lasts, while everyone else is still guessing from vibes.",
   },
   {
-    claim: "Coverage concentrates in places that already had campus ministry infrastructure.",
+    claim: "Coverage concentrates in places that already had campus ministry infrastructure — but the Northeast has its own, quieter version of the same thing.",
     evidence:
-      "Events cluster in the evangelical-college corridor (TX, GA, AL, MS, TN, OH, FL) and thin out almost everywhere else. That's consistent with where established chaplaincy and campus-ministry networks already operate, not necessarily with where Gen Z spiritual openness is highest.",
+      "Events cluster in the evangelical-college corridor (TX, GA, AL, MS, TN, OH, FL) and thin out almost everywhere else. That's consistent with where established chaplaincy and campus-ministry networks already operate, not necessarily with where Gen Z spiritual openness is highest. The one documented exception: Christian Union, a standing ministry network running weekly Bible courses across Princeton, Columbia, Cornell, Yale, Harvard, Dartmouth, Brown, and Penn — at Princeton alone it reaches roughly 10% of undergraduates, larger than most groups on campus. No source connects it to the touring, arena-scale Unite US model or to any spike this dataset tracks; it runs on a slower, smaller-scale, weekly-program cadence instead.",
     soWhat:
-      "The Northeast, West Coast, and big secular public universities outside the South are comparatively untested, not necessarily unreceptive. Bringing the same touring-ministry and campus-chaplaincy model into those regions is a real, largely unexplored opportunity rather than a dead end.",
+      "The West Coast and big secular public universities outside the South remain comparatively untested, not necessarily unreceptive. But 'the Northeast has no campus ministry infrastructure' isn't quite right — it has a real one, just built for steady weekly discipleship rather than a single arena night with a headline attendance number. Whether that model could support (or already has, unreported) something like an Asbury-style spontaneous outbreak is an open, checkable question, not an assumption either way.",
   },
   {
     claim: "The one hard, survey-confirmed trend is narrower than \"Gen Z revival\": it's specifically about young men.",
@@ -122,7 +122,7 @@ export default function Findings() {
       <div className="bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-5">
         <h2 className="font-semibold mb-2">The honest limit on all of this</h2>
         <p className="text-sm leading-relaxed text-black/70 dark:text-white/60">
-          This is 60 curated, press-covered events and a handful of national surveys — not a controlled study.
+          This is 61 curated, press-covered events and a handful of national surveys — not a controlled study.
           It can tell you what got covered and what patterns show up inside that coverage; it can't tell you the
           true rate of organic revival versus organized events nationwide, because no one is counting the events
           that never got press. Treat every "so what" above as the strongest read of the evidence gathered here,

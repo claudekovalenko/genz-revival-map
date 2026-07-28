@@ -50,6 +50,41 @@ export const revivals: RevivalEvent[] = [
     ],
   },
   {
+    id: "christian-union-ivy-league",
+    name: "Christian Union (Ivy League campus ministry network)",
+    city: "Princeton",
+    state: "New Jersey",
+    stateCode: "NJ",
+    lat: 40.3573,
+    lon: -74.6672,
+    year: 2024,
+    startDate: "2024-03-01",
+    category: "movement",
+    origin: "organized",
+    denominationTradition: "Interdenominational evangelical (parachurch leadership-development ministry)",
+    summary:
+      "Not a single event — a standing campus ministry network operating at Princeton, Columbia, Cornell, Yale, Harvard, Dartmouth, Brown, and Penn (plus students at Harvard Law and Stanford), running weekly Bible courses and leadership programs. At Princeton, Christian Union draws roughly 500 students a year to at least one program — about 10% of undergraduates, among the largest student groups on campus. In March 2024 it held a 'CU Proclaim' retreat at Cornell drawing students from Cornell, Yale, Dartmouth, and Columbia, explicitly framed by organizers as praying for a repeat of a 1969 Cornell revival.",
+    reportedBaptisms: "Not tallied centrally — Bible-course and leadership-program model, not an event/altar-call model",
+    followThrough:
+      "The clearest documented Ivy League/Northeast presence in this dataset, filling a gap this project's own Findings page flags: the Northeast and elite secular universities outside the South are comparatively untested by the touring-ministry model seen at Auburn, Texas A&M, etc. No source here connects Christian Union to the 2023 Asbury-linked wave or to Unite US; treat it as parallel, longer-running infrastructure (Christian Union was founded in the 2000s) rather than part of the same 2023-2025 spike.",
+    demographicsNote: "Undergraduate and some graduate/professional students across 8+ campuses; Bible-course enrollment data by campus is published (e.g. 297 at Princeton, 160 at Harvard, 2020-21 figures) but no Gen Z-specific breakdown beyond that.",
+    tags: ["infrastructure", "no-single-event", "unverified-link-to-campus-wave", "ivy-league"],
+    articles: [
+      {
+        title: "Praying for Another Revival at Cornell",
+        source: "Christian Union",
+        url: "https://www.christianunion.org/the-magazine/3006-praying-for-another-revival-at-cornell",
+        date: "2024-04-01",
+      },
+      {
+        title: "Christian Union",
+        source: "Philanthropy Roundtable (Almanac)",
+        url: "https://www.philanthropyroundtable.org/almanac/christian-union/",
+        date: "2023-01-01",
+      },
+    ],
+  },
+  {
     id: "e3-partners-usa-noplaceleft",
     name: "e3 Partners USA (#NoPlaceLeft coalition member)",
     city: "Plano",
