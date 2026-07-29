@@ -5,7 +5,6 @@ import { scaleLinear } from "d3-scale";
 import type { RevivalEvent } from "../data/types";
 import { aggregateByState } from "../data/utils";
 import { partyColor, stateNameToCode, statePresidentialWinner2024 } from "../data/statePolitics";
-import { nationalHighlyReligiousAvgPct, stateHighlyReligiousPct } from "../data/stateReligiosity";
 import statesTopology from "../geo/states-10m.json";
 
 const originColor: Record<RevivalEvent["origin"], string> = {
@@ -32,7 +31,7 @@ type Props = {
   events: RevivalEvent[];
 };
 
-type ShadeMode = "events" | "politics" | "religiosity";
+type ShadeMode = "events" | "politics";
 
 export default function USMap({ events }: Props) {
   const navigate = useNavigate();
@@ -50,11 +49,6 @@ export default function USMap({ events }: Props) {
     [maxCount]
   );
 
-  const religiosityScale = useMemo(
-    () => scaleLinear<string>().domain([10, 50]).range(["#fde68a", "#b45309"]),
-    []
-  );
-
   return (
     <div className="relative">
       <div className="flex flex-wrap items-center gap-2 mb-3">
@@ -63,7 +57,6 @@ export default function USMap({ events }: Props) {
           [
             { value: "events", label: "Event density" },
             { value: "politics", label: "2024 presidential vote" },
-            { value: "religiosity", label: "State religiosity (Pew)" },
           ] as { value: ShadeMode; label: string }[]
         ).map((opt) => (
           <button
@@ -89,15 +82,10 @@ export default function USMap({ events }: Props) {
               const count = agg?.count ?? 0;
               const code = stateNameToCode[name];
               const winner = code ? statePresidentialWinner2024[code] : undefined;
-              const religiosity = code ? stateHighlyReligiousPct[code] : undefined;
               const fill =
                 shadeMode === "politics"
                   ? winner
                     ? partyColor[winner]
-                    : "#efeae2"
-                  : shadeMode === "religiosity"
-                  ? religiosity !== undefined
-                    ? religiosityScale(religiosity)
                     : "#efeae2"
                   : count > 0
                   ? colorScale(count)
@@ -106,8 +94,6 @@ export default function USMap({ events }: Props) {
               const tooltipBody =
                 shadeMode === "politics"
                   ? `${winner === "R" ? "Trump" : winner === "D" ? "Harris" : "No data"} won in 2024 · ${eventSummary}`
-                  : shadeMode === "religiosity"
-                  ? `${religiosity !== undefined ? `${religiosity}% highly religious (Pew)` : "No published figure"} · ${eventSummary}`
                   : eventSummary;
               return (
                 <Geography
@@ -210,36 +196,12 @@ export default function USMap({ events }: Props) {
             </span>
           </>
         )}
-        {shadeMode === "religiosity" && (
-          <>
-            <span className="flex items-center gap-1.5">
-              <span className="inline-block w-2.5 h-2.5 rounded" style={{ background: "#fde68a" }} />
-              Lower % highly religious
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="inline-block w-2.5 h-2.5 rounded" style={{ background: "#b45309" }} />
-              Higher % highly religious
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="inline-block w-2.5 h-2.5 rounded" style={{ background: "#efeae2" }} />
-              No published figure
-            </span>
-          </>
-        )}
       </div>
       {shadeMode === "politics" && (
         <p className="text-xs text-black/40 dark:text-white/35 mt-2 max-w-2xl">
           Shown for descriptive comparison only — winner-only, not vote margin, per state's 2024 presidential
           result. This is not a claim that political lean causes or predicts revival activity; see{" "}
           <Link to="/about" className="underline">methodology</Link> before drawing conclusions from the overlay.
-        </p>
-      )}
-      {shadeMode === "religiosity" && (
-        <p className="text-xs text-black/40 dark:text-white/35 mt-2 max-w-2xl">
-          % of state adults classified "highly religious" by Pew's 2023-24 Religious Landscape Study (national
-          average: {nationalHighlyReligiousAvgPct}%). Only 10 states have a confirmed published figure in this
-          project's sources — the rest show "no published figure" rather than a guess. Descriptive comparison
-          only, not a causal claim; see <Link to="/about" className="underline">methodology</Link>.
         </p>
       )}
     </div>

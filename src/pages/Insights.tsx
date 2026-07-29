@@ -47,6 +47,7 @@ export default function Insights() {
   const phoneVsScripture = trends.find((t) => t.id === "genz-phone-vs-scripture")!;
   const christianByGen = trends.find((t) => t.id === "christian-identification-by-generation")!;
   const mentalHealth = trends.find((t) => t.id === "genz-mental-health-vs-boomers")!;
+  const religiousBreakdown = trends.find((t) => t.id === "genz-religious-affiliation-breakdown")!;
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8 flex flex-col gap-10">
@@ -303,6 +304,34 @@ export default function Insights() {
           </ResponsiveContainer>
           {mentalHealth.note && (
             <p className="text-xs text-black/50 dark:text-white/40 mt-2">{mentalHealth.note}</p>
+          )}
+        </ChartCard>
+      </div>
+
+      <div>
+        <h2 className="text-lg font-semibold tracking-tight">Who this is happening among</h2>
+        <p className="text-sm text-black/60 dark:text-white/50 mt-1 max-w-2xl">
+          The one demographic breakdown with real published numbers behind it: race/ethnicity crossed with
+          religious tradition, alongside the gender split shown above.
+        </p>
+      </div>
+      <div className="grid grid-cols-1 gap-6">
+        <ChartCard title={religiousBreakdown.title} subtitle={`Source: ${religiousBreakdown.source.source}`}>
+          <ResponsiveContainer width="100%" height={280}>
+            <BarChart
+              data={religiousBreakdown.points.map((p) => ({ label: p.label, value: p.value }))}
+              layout="vertical"
+              margin={{ left: 24 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" opacity={0.2} />
+              <XAxis type="number" unit="%" />
+              <YAxis type="category" dataKey="label" width={190} tick={{ fontSize: 11 }} />
+              <Tooltip />
+              <Bar dataKey="value" fill={barColor} radius={[0, 4, 4, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+          {religiousBreakdown.note && (
+            <p className="text-xs text-black/50 dark:text-white/40 mt-2">{religiousBreakdown.note}</p>
           )}
         </ChartCard>
       </div>

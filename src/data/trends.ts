@@ -224,4 +224,27 @@ export const trends: TrendSeries[] = [
       { year: 2024, label: "Elder: frequent loneliness", value: 4 },
     ],
   },
+  {
+    id: "genz-religious-affiliation-breakdown",
+    title: "Gen Z religious affiliation, by race/ethnicity and tradition",
+    unit: "% of all Gen Z adults",
+    source: {
+      title: "PRRI Generation Z Fact Sheet",
+      source: "PRRI",
+      url: "https://prri.org/spotlight/prri-generation-z-fact-sheet/",
+      date: "2024-01-01",
+    },
+    note: "The clearest published answer to 'who is this happening among': two-thirds of Gen Z is religiously affiliated at all, split across many small groups rather than one dominant tradition. White evangelical Protestants (10%) and Hispanic Catholics (9%) are the two largest single groups — both larger than any one racial/ethnic group within mainline Protestantism or Catholicism alone. Read alongside the gender-attendance trends elsewhere on this page: this shows the racial/denominational split, not the gender split, of the same generation.",
+    points: [
+      { year: 2024, label: "White evangelical Protestant", value: 10 },
+      { year: 2024, label: "Hispanic Catholic", value: 9 },
+      { year: 2024, label: "White mainline Protestant", value: 8 },
+      { year: 2024, label: "Black Protestant", value: 7 },
+      { year: 2024, label: "White Catholic", value: 7 },
+      { year: 2024, label: "Hispanic Protestant", value: 6 },
+      { year: 2024, label: "Other Protestants of color", value: 3 },
+      { year: 2024, label: "Other Catholics of color", value: 2 },
+      { year: 2024, label: "Latter-day Saint", value: 2 },
+    ],
+  },
 ];
