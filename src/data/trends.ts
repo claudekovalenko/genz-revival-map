@@ -244,7 +244,6 @@ export const trends: TrendSeries[] = [
       { year: 2024, label: "Hispanic Protestant", value: 6 },
       { year: 2024, label: "Other Protestants of color", value: 3 },
       { year: 2024, label: "Other Catholics of color", value: 2 },
-      { year: 2024, label: "Latter-day Saint", value: 2 },
     ],
   },
 ];

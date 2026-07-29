@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
-import { scaleLinear } from "d3-scale";
+import { scaleLinear, scaleSqrt } from "d3-scale";
 import type { RevivalEvent } from "../data/types";
 import { aggregateByState } from "../data/utils";
 import { partyColor, stateNameToCode, statePresidentialWinner2024 } from "../data/statePolitics";
@@ -33,6 +33,14 @@ type Props = {
 
 type ShadeMode = "events" | "politics";
 
+/** Pulls a rough headcount out of the free-text attendance field, falling back to baptism count. */
+function estimatedSize(e: RevivalEvent): number {
+  const match = e.estimatedAttendance?.replace(/,/g, "").match(/(\d+)/);
+  if (match) return parseInt(match[1], 10);
+  if (e.baptismsCount) return e.baptismsCount * 15;
+  return 0;
+}
+
 export default function USMap({ events }: Props) {
   const navigate = useNavigate();
   const [tooltip, setTooltip] = useState<Tooltip>(null);
@@ -42,6 +50,15 @@ export default function USMap({ events }: Props) {
   const maxCount = useMemo(
     () => Math.max(1, ...Array.from(aggregates.values()).map((a) => a.count)),
     [aggregates]
+  );
+
+  const maxSize = useMemo(
+    () => Math.max(1, ...events.map(estimatedSize)),
+    [events]
+  );
+  const markerRadiusScale = useMemo(
+    () => scaleSqrt().domain([0, maxSize]).range([4, 13]),
+    [maxSize]
   );
 
   const colorScale = useMemo(
@@ -145,7 +162,7 @@ export default function USMap({ events }: Props) {
             onClick={() => navigate(`/event/${e.id}`)}
           >
             <circle
-              r={5}
+              r={markerRadiusScale(estimatedSize(e))}
               fill={e.tags.includes("npl") ? nplColor : originColor[e.origin]}
               stroke="#fff"
               strokeWidth={1.5}
@@ -177,6 +194,13 @@ export default function USMap({ events }: Props) {
         <span className="flex items-center gap-1.5">
           <span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: nplColor }} />
           No Place Left (disciple-making network)
+        </span>
+        <span className="flex items-center gap-1.5">
+          <span className="inline-flex items-center gap-0.5">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-black/40 dark:bg-white/40" />
+            <span className="inline-block w-3 h-3 rounded-full bg-black/40 dark:bg-white/40" />
+          </span>
+          Dot size = reported attendance or baptisms (where known)
         </span>
         {shadeMode === "events" && (
           <span className="flex items-center gap-1.5">
