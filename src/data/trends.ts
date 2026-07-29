@@ -188,4 +188,40 @@ export const trends: TrendSeries[] = [
     note: "Cited alongside the Scripture-engagement trend above, not as a matched study — no single source directly compares phone time to Bible-reading time for the same Gen Z sample. Other surveys put Gen Z self-reported phone addiction anywhere from 69% to 83% depending on how the question is asked and average daily screen time around 6.5 hours; treat this as a directional read (heavy phone dependency, low Scripture engagement, same generation, same years), not a precise ratio.",
     points: [{ year: 2024, value: 83 }],
   },
+  {
+    id: "christian-identification-by-generation",
+    title: "Adults identifying as Christian, by generation",
+    unit: "% identifying as Christian",
+    source: {
+      title: "2023-24 Religious Landscape Study: Executive Summary",
+      source: "Pew Research Center",
+      url: "https://www.pewresearch.org/religion/2025/02/26/religious-landscape-study-executive-summary/",
+      date: "2025-02-26",
+    },
+    note: "Single-survey snapshot, not a trend over time — shows a steep generational gradient. Millennial figure is Pew's own imprecise 'more than half'; shown here as 54% per widely-cited secondary summaries of the same study, not a Pew-published exact number. Complements the 'nones-by-generation' trend above (same underlying decline, viewed from the Christian-identification side rather than the unaffiliated side) and gives the two new Catholic Newman Center entries on the map a generational baseline to sit against.",
+    points: [
+      { year: 2024, label: "Gen Z", value: 45 },
+      { year: 2024, label: "Millennial", value: 54 },
+      { year: 2024, label: "Gen X", value: 72 },
+    ],
+  },
+  {
+    id: "genz-mental-health-vs-boomers",
+    title: "Gen Z vs. Boomer/Elder: frequent anxiety and loneliness",
+    unit: "% reporting frequently",
+    source: {
+      title: "New Data on Gen Z: Perceptions of Pressure, Anxiety and Empowerment",
+      source: "Barna Group",
+      url: "https://www.barna.com/research/gen-z-success/",
+      date: "2024-01-01",
+    },
+    note: "Cited alongside this map's church-attendance and Bible-engagement trends, not as proof of a causal link — Barna itself frames rising Gen Z mental-health strain as an opening for ministry, not a measured driver of the campus wave. 39% of Gen Z report frequent uncertainty about the future and frequent anxiety about decisions, more than double the combined Boomer/Elder rate (16%); 29% of Gen Z report frequent loneliness, roughly 3-7x the Boomer (8%) and Elder (4%) rates.",
+    points: [
+      { year: 2024, label: "Gen Z: frequent anxiety", value: 39 },
+      { year: 2024, label: "Boomer/Elder: frequent anxiety", value: 16 },
+      { year: 2024, label: "Gen Z: frequent loneliness", value: 29 },
+      { year: 2024, label: "Boomer: frequent loneliness", value: 8 },
+      { year: 2024, label: "Elder: frequent loneliness", value: 4 },
+    ],
+  },
 ];
