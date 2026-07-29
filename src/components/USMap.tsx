@@ -69,23 +69,24 @@ export default function USMap({ events }: Props) {
   return (
     <div className="relative">
       <div className="flex flex-wrap items-center gap-2 mb-3">
-        <span className="text-xs font-medium text-black/60 dark:text-white/50">Shade states by:</span>
+        <span className="text-sm font-semibold">Shade states by:</span>
         {(
           [
-            { value: "events", label: "Event density" },
-            { value: "politics", label: "2024 presidential vote" },
-          ] as { value: ShadeMode; label: string }[]
+            { value: "events", label: "Event density", swatch: "#7c3aed" },
+            { value: "politics", label: "2024 presidential vote (red/blue)", swatch: partyColor.R },
+          ] as { value: ShadeMode; label: string; swatch: string }[]
         ).map((opt) => (
           <button
             key={opt.value}
             type="button"
             onClick={() => setShadeMode(opt.value)}
-            className={`px-3 py-1 rounded-full text-xs border transition-colors ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm border-2 transition-colors ${
               shadeMode === opt.value
                 ? "bg-black text-white border-black dark:bg-white dark:text-black dark:border-white"
-                : "border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/10"
+                : "border-black/20 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/10"
             }`}
           >
+            <span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: opt.swatch }} />
             {opt.label}
           </button>
         ))}
@@ -117,7 +118,7 @@ export default function USMap({ events }: Props) {
                   key={geo.rsmKey}
                   geography={geo}
                   fill={fill}
-                  fillOpacity={shadeMode === "politics" ? 0.55 : 1}
+                  fillOpacity={1}
                   stroke="#ffffff"
                   strokeWidth={0.5}
                   onMouseEnter={(evt) => {
@@ -211,11 +212,11 @@ export default function USMap({ events }: Props) {
         {shadeMode === "politics" && (
           <>
             <span className="flex items-center gap-1.5">
-              <span className="inline-block w-2.5 h-2.5 rounded" style={{ background: partyColor.R, opacity: 0.55 }} />
+              <span className="inline-block w-2.5 h-2.5 rounded" style={{ background: partyColor.R }} />
               Trump won state, 2024
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="inline-block w-2.5 h-2.5 rounded" style={{ background: partyColor.D, opacity: 0.55 }} />
+              <span className="inline-block w-2.5 h-2.5 rounded" style={{ background: partyColor.D }} />
               Harris won state, 2024
             </span>
           </>
