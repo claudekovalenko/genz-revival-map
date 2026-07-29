@@ -45,6 +45,8 @@ export default function Insights() {
   const scriptureEngagement = trends.find((t) => t.id === "genz-scripture-engagement")!;
   const bibleAccuracy = trends.find((t) => t.id === "bible-total-accuracy-belief")!;
   const phoneVsScripture = trends.find((t) => t.id === "genz-phone-vs-scripture")!;
+  const christianByGen = trends.find((t) => t.id === "christian-identification-by-generation")!;
+  const mentalHealth = trends.find((t) => t.id === "genz-mental-health-vs-boomers")!;
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8 flex flex-col gap-10">
@@ -271,6 +273,36 @@ export default function Insights() {
           </ResponsiveContainer>
           {phoneVsScripture.note && (
             <p className="text-xs text-black/50 dark:text-white/40 mt-2">{phoneVsScripture.note}</p>
+          )}
+        </ChartCard>
+
+        <ChartCard title={christianByGen.title} subtitle={`Source: ${christianByGen.source.source}`}>
+          <ResponsiveContainer width="100%" height={220}>
+            <BarChart data={christianByGen.points.map((p) => ({ label: p.label, value: p.value }))}>
+              <CartesianGrid strokeDasharray="3 3" opacity={0.2} />
+              <XAxis dataKey="label" />
+              <YAxis unit="%" />
+              <Tooltip />
+              <Bar dataKey="value" fill={barColor} radius={[4, 4, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+          {christianByGen.note && (
+            <p className="text-xs text-black/50 dark:text-white/40 mt-2">{christianByGen.note}</p>
+          )}
+        </ChartCard>
+
+        <ChartCard title={mentalHealth.title} subtitle={`Source: ${mentalHealth.source.source}`}>
+          <ResponsiveContainer width="100%" height={240}>
+            <BarChart data={mentalHealth.points.map((p) => ({ label: p.label, value: p.value }))} layout="vertical" margin={{ left: 24 }}>
+              <CartesianGrid strokeDasharray="3 3" opacity={0.2} />
+              <XAxis type="number" unit="%" />
+              <YAxis type="category" dataKey="label" width={160} tick={{ fontSize: 11 }} />
+              <Tooltip />
+              <Bar dataKey="value" fill={barColor} radius={[0, 4, 4, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+          {mentalHealth.note && (
+            <p className="text-xs text-black/50 dark:text-white/40 mt-2">{mentalHealth.note}</p>
           )}
         </ChartCard>
       </div>
