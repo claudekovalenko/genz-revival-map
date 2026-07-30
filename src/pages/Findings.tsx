@@ -85,6 +85,13 @@ const findings: Finding[] = [
       "This dataset's whole framing — organic outbreak vs. organized touring event — doesn't fit the Catholic pattern well, because OCIA growth is neither a spontaneous spike nor a produced arena night; it's steady enrollment growth in an existing year-long institutional process. That's worth naming plainly: if 'Gen Z revival' is real, it may be running as at least two structurally different phenomena in parallel — a fast, visible Protestant evangelical wave and a slower, less-covered Catholic conversion trend — and conflating them into one storyline risks missing what's distinct about each.",
   },
   {
+    claim: "Not everyone studying this agrees a real revival is happening — and that skepticism deserves a place here too.",
+    evidence:
+      "Religion researcher Ryan Burge has publicly pushed back on revival claims, saying he isn't seeing anything at the scale that would point toward a sustained, substantive nationwide shift. Pew Research's own reporting says there is no clear evidence a nationwide religious resurgence is underway. The more measured read, echoed by outlets like Baptist Standard: this isn't Gen Z returning to religion so much as Gen Z leaving it more slowly than Millennials did at the same age — a stabilization, not a reversal.",
+    soWhat:
+      "This map documents real, sourced, individually-verified events — that part isn't in dispute. What is genuinely contested is whether summing them up adds up to 'revival' at the national level, or whether that's a narrative laid on top of ordinary variation and good local reporting. Both things can be true at once: real events happened, and credible researchers still say the aggregate national trend line hasn't clearly moved. Read every claim on this page with that tension in mind, not as a settled verdict either way.",
+  },
+  {
     claim: "A small number of repeat organizers account for a large share of the organized events.",
     evidence:
       "Lou Engle's network produced The Call (2012), Azusa Now (2016), and The Send (2019) — three of the largest organized entries in this dataset, spanning seven years. Jennie Allen's IF:Gathering (2014) connects directly to her co-hosting the Texas A&M Unite US event a decade later (2024).",
@@ -129,7 +136,7 @@ export default function Findings() {
       <div className="bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-5">
         <h2 className="font-semibold mb-2">The honest limit on all of this</h2>
         <p className="text-sm leading-relaxed text-black/70 dark:text-white/60">
-          This is 66 curated, press-covered events and a handful of national surveys — not a controlled study.
+          This is 68 curated, press-covered events and a handful of national surveys — not a controlled study.
           It can tell you what got covered and what patterns show up inside that coverage; it can't tell you the
           true rate of organic revival versus organized events nationwide, because no one is counting the events
           that never got press. Treat every "so what" above as the strongest read of the evidence gathered here,
