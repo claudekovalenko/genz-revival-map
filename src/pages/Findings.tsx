@@ -92,6 +92,13 @@ const findings: Finding[] = [
       "This map documents real, sourced, individually-verified events — that part isn't in dispute. What is genuinely contested is whether summing them up adds up to 'revival' at the national level, or whether that's a narrative laid on top of ordinary variation and good local reporting. Both things can be true at once: real events happened, and credible researchers still say the aggregate national trend line hasn't clearly moved. Read every claim on this page with that tension in mind, not as a settled verdict either way.",
   },
   {
+    claim: "Believers who've watched this closely see something worth real hope in it, not just a media narrative.",
+    evidence:
+      "Actor and ministry leader Kirk Cameron, speaking ahead of America's 250th anniversary in 2026, argued the country is positioned for genuine spiritual awakening — pointing to the historical pattern that great awakenings tend to arrive during periods of moral decline, spiritual apathy, and national strain, and framing the current moment as ripe for one. That's an optimistic reading from inside the faith community, not a data point — but it's a live, public counterweight to the academic skepticism in the previous entry, and it's the same instinct driving the touring ministries and campus chaplains behind many of the organized events on this map.",
+    soWhat:
+      "Skepticism and hope aren't actually in conflict here — they're answering different questions. Researchers are asking whether the aggregate national numbers have moved; people like Cameron are making a faith claim about what this moment could become, not a statistical one. Held next to the sourced events on this map, that hope isn't baseless: real baptisms, real packed arenas, and real campus chapters happened. Whether they add up to a Great Awakening is still an open question — but it's a question worth being genuinely hopeful about, not just cautious about.",
+  },
+  {
     claim: "A small number of repeat organizers account for a large share of the organized events.",
     evidence:
       "Lou Engle's network produced The Call (2012), Azusa Now (2016), and The Send (2019) — three of the largest organized entries in this dataset, spanning seven years. Jennie Allen's IF:Gathering (2014) connects directly to her co-hosting the Texas A&M Unite US event a decade later (2024).",
