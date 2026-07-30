@@ -2169,4 +2169,40 @@ export const revivals: RevivalEvent[] = [
       },
     ],
   },
+  {
+    id: "hope-fest-la-2026",
+    name: "Hope Fest LA",
+    city: "Los Angeles",
+    state: "California",
+    stateCode: "CA",
+    lat: 34.0141,
+    lon: -118.2879,
+    year: 2026,
+    startDate: "2026-04-11",
+    category: "movement",
+    origin: "organized",
+    denominationTradition: "Multi-denominational / charismatic evangelical (Hope California / Sons of Thunder)",
+    summary:
+      "A citywide, multi-denominational rally at the LA Memorial Coliseum organized by Hope California and Sons of Thunder (Samuel Tejada), billed to draw tens of thousands for worship, testimonies, healing, and mass baptisms. The Coliseum event is the closing day of '40 Days of Hope' (March 1-April 9, 2026), a citywide prayer, fasting, and evangelism campaign called Mission 1 Million.",
+    estimatedAttendance: "Organizers projected tens of thousands",
+    reportedBaptisms: "Mass baptisms planned as part of the program; no independent post-event count found",
+    followThrough:
+      "Explicitly citywide and multi-generational, not a Gen Z-specific or campus event like most entries on this map — included as California's largest organized 2026 gathering and the state's first major mass-baptism-style event since 'The Call' in 2012, not as a Gen Z data point on its own.",
+    demographicsNote: "Citywide, multicultural, multi-denominational outreach — organizers explicitly frame it as cross-generational, not youth-specific; no independent Gen Z breakdown published.",
+    tags: ["wave-2026", "mass-gathering", "not-genz-specific"],
+    articles: [
+      {
+        title: "Hope Fest LA 2026: Revival, Unity & Massive Worship at the LA Coliseum",
+        source: "Christian Podcast Network",
+        url: "https://www.christianpodcast.com/post/hope-fest-la-2026",
+        date: "2026-01-15",
+      },
+      {
+        title: "Hope Fest LA",
+        source: "Los Angeles Coliseum",
+        url: "https://www.lacoliseum.com/events/hopefest-la-2026/",
+        date: "2026-01-01",
+      },
+    ],
+  },
 ];
