@@ -2283,4 +2283,32 @@ export const revivals: RevivalEvent[] = [
       },
     ],
   },
+  {
+    id: "gcu-outdoor-worship-2026",
+    name: "Grand Canyon University Outdoor Worship Gathering (unverified)",
+    city: "Phoenix",
+    state: "Arizona",
+    stateCode: "AZ",
+    lat: 33.5722,
+    lon: -112.1391,
+    year: 2026,
+    startDate: "2026-02-11",
+    category: "campus",
+    origin: "organic",
+    denominationTradition: "Interdenominational evangelical",
+    summary:
+      "A social media post described GCU students gathering outdoors on campus to worship on February 11, 2026 — separate from the large, independently-covered Unite US arena event at GCU in October 2025 already documented on this map. No independent news coverage, attendance figure, or follow-up report was found for this specific gathering.",
+    reportedBaptisms: "Not reported",
+    followThrough: "Included at the user's request as a documented lead, not a verified event — sourced only to a described social media post, not to independent reporting. Treat as unconfirmed until a news source or the university's own channels corroborate it.",
+    demographicsNote: "No independent demographic data available.",
+    tags: ["unverified", "low-confidence", "social-media-only"],
+    articles: [
+      {
+        title: "Social media post describing an outdoor student worship gathering at GCU",
+        source: "User-reported social media post (X), not independently corroborated",
+        url: "https://x.com/GVStudios_TV",
+        date: "2026-02-11",
+      },
+    ],
+  },
 ];

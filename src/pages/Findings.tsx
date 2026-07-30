@@ -143,7 +143,7 @@ export default function Findings() {
       <div className="bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-5">
         <h2 className="font-semibold mb-2">The honest limit on all of this</h2>
         <p className="text-sm leading-relaxed text-black/70 dark:text-white/60">
-          This is 68 curated, press-covered events and a handful of national surveys — not a controlled study.
+          This is 69 curated, press-covered events and a handful of national surveys — not a controlled study.
           It can tell you what got covered and what patterns show up inside that coverage; it can't tell you the
           true rate of organic revival versus organized events nationwide, because no one is counting the events
           that never got press. Treat every "so what" above as the strongest read of the evidence gathered here,
