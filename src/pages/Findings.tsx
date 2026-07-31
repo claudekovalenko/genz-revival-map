@@ -78,13 +78,6 @@ const findings: Finding[] = [
       "Rising Bible sales, app installs, and reading rates are a real, sourced trend — but they measure exposure, not belief, and Gen Z remains both the most phone-dependent generation on record (surveys put self-reported phone addiction at 69-83%) and the least Scripture-engaged by Barna's own classification. The opportunity isn't getting more people to open the app or the book — that's already happening. It's building whatever comes after opening it: teaching, community, and repetition that turns a five-minute YouVersion streak into actual conviction, before the same attention that opened the Bible gets pulled back to the other six-plus hours a day already spoken for.",
   },
   {
-    claim: "Nearly everything on this map is Protestant evangelical — but there's a separate, slower-building Catholic wave running in parallel.",
-    evidence:
-      "Every entry on this map was interdenominational evangelical or Baptist until two Newman Center (Catholic campus ministry) entries: Ohio State's OCIA conversion class went from ~10 students around 2022 to 47 the next year to 73 people received into the Church at the 2026 Easter Vigil, and the University of Nebraska-Lincoln's grew from 32 to 41 to 95 students over three years. Neither is a single arena-night event — both are multi-year enrollment growth in the year-long OCIA conversion process, reported by diocesan and Catholic press (America Magazine, Diocese of Lincoln), not by any outlet covering the Unite US/Asbury-linked wave.",
-    soWhat:
-      "This dataset's whole framing — organic outbreak vs. organized touring event — doesn't fit the Catholic pattern well, because OCIA growth is neither a spontaneous spike nor a produced arena night; it's steady enrollment growth in an existing year-long institutional process. That's worth naming plainly: if 'Gen Z revival' is real, it may be running as at least two structurally different phenomena in parallel — a fast, visible Protestant evangelical wave and a slower, less-covered Catholic conversion trend — and conflating them into one storyline risks missing what's distinct about each.",
-  },
-  {
     claim: "Not everyone studying this agrees a real revival is happening — and that skepticism deserves a place here too.",
     evidence:
       "Religion researcher Ryan Burge has publicly pushed back on revival claims, telling Religion News Service he isn't seeing anything at the scale that would point toward a sustained, substantive nationwide shift — by his standard, a real revival would mean tens of millions more people at a house of worship this week than a year ago, not the much smaller numbers actually being reported. Pew's own reporting says there is no clear evidence a nationwide religious resurgence is underway. Burge's read on what's really happening: fewer young Christians overall, but the ones who remain are noticeably more committed — he compares it to reducing a sauce on the stove, where the volume drops but the flavor concentrates. Barna's own data is more mixed than the revival headlines suggest, too: Gen Z churchgoers attend only slightly more often than Millennial churchgoers (1.9 times a month vs. 1.8), and Barna's own CEO has said he'd call what he sees 'renewal,' not revival, as a researcher.",
@@ -143,7 +136,7 @@ export default function Findings() {
       <div className="bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-5">
         <h2 className="font-semibold mb-2">The honest limit on all of this</h2>
         <p className="text-sm leading-relaxed text-black/70 dark:text-white/60">
-          This is 71 curated, press-covered events and a handful of national surveys — not a controlled study.
+          This is 69 curated, press-covered events and a handful of national surveys — not a controlled study.
           It can tell you what got covered and what patterns show up inside that coverage; it can't tell you the
           true rate of organic revival versus organized events nationwide, because no one is counting the events
           that never got press. Treat every "so what" above as the strongest read of the evidence gathered here,
