@@ -246,4 +246,20 @@ export const trends: TrendSeries[] = [
       { year: 2024, label: "Other Catholics of color", value: 2 },
     ],
   },
+  {
+    id: "christian-identity-vs-highly-religious",
+    title: "Identifying as Christian vs. actually 'highly religious'",
+    unit: "% of US adults",
+    source: {
+      title: "2023-24 Religious Landscape Study: Executive Summary",
+      source: "Pew Research Center",
+      url: "https://www.pewresearch.org/religion/2025/02/26/religious-landscape-study-executive-summary/",
+      date: "2025-02-26",
+    },
+    note: "A simple but important gap: 62% of US adults call themselves Christian, but only about 31% meet Pew's bar for 'highly religious' — the combined measure of praying daily, being certain God exists, calling religion very important, and attending services at least once or twice a month. In plain terms, roughly twice as many people identify as Christian as actually practice at a high level. Useful context for reading every attendance/decision/baptism number on this map: a big crowd at an event doesn't mean a big share of the country is deeply religious day-to-day.",
+    points: [
+      { year: 2024, label: "Identify as Christian", value: 62 },
+      { year: 2024, label: "'Highly religious' (Pew)", value: 31 },
+    ],
+  },
 ];

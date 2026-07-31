@@ -48,6 +48,7 @@ export default function Insights() {
   const christianByGen = trends.find((t) => t.id === "christian-identification-by-generation")!;
   const mentalHealth = trends.find((t) => t.id === "genz-mental-health-vs-boomers")!;
   const religiousBreakdown = trends.find((t) => t.id === "genz-religious-affiliation-breakdown")!;
+  const christianVsHighlyReligious = trends.find((t) => t.id === "christian-identity-vs-highly-religious")!;
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8 flex flex-col gap-10">
@@ -332,6 +333,21 @@ export default function Insights() {
           </ResponsiveContainer>
           {religiousBreakdown.note && (
             <p className="text-xs text-black/50 dark:text-white/40 mt-2">{religiousBreakdown.note}</p>
+          )}
+        </ChartCard>
+
+        <ChartCard title={christianVsHighlyReligious.title} subtitle={`Source: ${christianVsHighlyReligious.source.source}`}>
+          <ResponsiveContainer width="100%" height={220}>
+            <BarChart data={christianVsHighlyReligious.points.map((p) => ({ label: p.label, value: p.value }))}>
+              <CartesianGrid strokeDasharray="3 3" opacity={0.2} />
+              <XAxis dataKey="label" tick={{ fontSize: 11 }} />
+              <YAxis unit="%" />
+              <Tooltip />
+              <Bar dataKey="value" fill={barColor} radius={[4, 4, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+          {christianVsHighlyReligious.note && (
+            <p className="text-xs text-black/50 dark:text-white/40 mt-2">{christianVsHighlyReligious.note}</p>
           )}
         </ChartCard>
       </div>
