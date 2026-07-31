@@ -87,9 +87,9 @@ const findings: Finding[] = [
   {
     claim: "Not everyone studying this agrees a real revival is happening — and that skepticism deserves a place here too.",
     evidence:
-      "Religion researcher Ryan Burge has publicly pushed back on revival claims, saying he isn't seeing anything at the scale that would point toward a sustained, substantive nationwide shift. Pew Research's own reporting says there is no clear evidence a nationwide religious resurgence is underway. The more measured read, echoed by outlets like Baptist Standard: this isn't Gen Z returning to religion so much as Gen Z leaving it more slowly than Millennials did at the same age — a stabilization, not a reversal.",
+      "Religion researcher Ryan Burge has publicly pushed back on revival claims, telling Religion News Service he isn't seeing anything at the scale that would point toward a sustained, substantive nationwide shift — by his standard, a real revival would mean tens of millions more people at a house of worship this week than a year ago, not the much smaller numbers actually being reported. Pew's own reporting says there is no clear evidence a nationwide religious resurgence is underway. Burge's read on what's really happening: fewer young Christians overall, but the ones who remain are noticeably more committed — he compares it to reducing a sauce on the stove, where the volume drops but the flavor concentrates. Barna's own data is more mixed than the revival headlines suggest, too: Gen Z churchgoers attend only slightly more often than Millennial churchgoers (1.9 times a month vs. 1.8), and Barna's own CEO has said he'd call what he sees 'renewal,' not revival, as a researcher.",
     soWhat:
-      "This map documents real, sourced, individually-verified events — that part isn't in dispute. What is genuinely contested is whether summing them up adds up to 'revival' at the national level, or whether that's a narrative laid on top of ordinary variation and good local reporting. Both things can be true at once: real events happened, and credible researchers still say the aggregate national trend line hasn't clearly moved. Read every claim on this page with that tension in mind, not as a settled verdict either way.",
+      "This map documents real, sourced, individually-verified events — that part isn't in dispute. What is genuinely contested is whether summing them up adds up to 'revival' at the national level, or whether that's a narrative laid on top of ordinary variation and good local reporting. Both things can be true at once: real events happened, and credible researchers still say the aggregate national trend line hasn't clearly moved — what's shifting may be intensity among a shrinking core, not the overall size of that core. Read every claim on this page with that tension in mind, not as a settled verdict either way.",
   },
   {
     claim: "Believers who've watched this closely see something worth real hope in it, not just a media narrative.",
@@ -143,7 +143,7 @@ export default function Findings() {
       <div className="bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-5">
         <h2 className="font-semibold mb-2">The honest limit on all of this</h2>
         <p className="text-sm leading-relaxed text-black/70 dark:text-white/60">
-          This is 69 curated, press-covered events and a handful of national surveys — not a controlled study.
+          This is 71 curated, press-covered events and a handful of national surveys — not a controlled study.
           It can tell you what got covered and what patterns show up inside that coverage; it can't tell you the
           true rate of organic revival versus organized events nationwide, because no one is counting the events
           that never got press. Treat every "so what" above as the strongest read of the evidence gathered here,
