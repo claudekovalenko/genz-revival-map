@@ -198,7 +198,7 @@ export const trends: TrendSeries[] = [
       url: "https://www.pewresearch.org/religion/2025/02/26/religious-landscape-study-executive-summary/",
       date: "2025-02-26",
     },
-    note: "Single-survey snapshot, not a trend over time — shows a steep generational gradient. Millennial figure is Pew's own imprecise 'more than half'; shown here as 54% per widely-cited secondary summaries of the same study, not a Pew-published exact number. Complements the 'nones-by-generation' trend above (same underlying decline, viewed from the Christian-identification side rather than the unaffiliated side) and gives the two new Catholic Newman Center entries on the map a generational baseline to sit against.",
+    note: "Single-survey snapshot, not a trend over time — shows a steep generational gradient. Millennial figure is Pew's own imprecise 'more than half'; shown here as 54% per widely-cited secondary summaries of the same study, not a Pew-published exact number. Complements the 'nones-by-generation' trend above (same underlying decline, viewed from the Christian-identification side rather than the unaffiliated side).",
     points: [
       { year: 2024, label: "Gen Z", value: 45 },
       { year: 2024, label: "Millennial", value: 54 },
