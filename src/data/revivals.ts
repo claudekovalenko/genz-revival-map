@@ -2306,4 +2306,33 @@ export const revivals: RevivalEvent[] = [
       },
     ],
   },
+  {
+    id: "no-place-left-new-york-city",
+    name: "No Place Left New York City",
+    city: "New York",
+    state: "New York",
+    stateCode: "NY",
+    lat: 40.7128,
+    lon: -74.006,
+    year: 2025,
+    startDate: "2025-01-01",
+    category: "movement",
+    origin: "organized",
+    denominationTradition: "Interdenominational evangelical (No Place Left-affiliated metro network)",
+    summary:
+      "A metro New York City chapter of the No Place Left coalition (nplnewyork.com), describing itself as a volunteer movement working to catalyze disciple-making and church-planting across the city's diverse communities. The chapter runs a described 5-day 'immersion experience' pairing visiting participants with active church-planting and disciple-making practitioners in NYC. No independent news coverage, attendance figures, or generation counts were found beyond the chapter's own site.",
+    reportedBaptisms: "Not tallied centrally — DMM approach tracks discipleship generations, not event-based baptism counts",
+    followThrough:
+      "This is the first New York state entry on this map and the first NPL chapter documented in a major Northeast metro area, alongside the Christian Union Ivy League network already on this map. Same caveat as the other NPL infrastructure entries: real, named local activity, not a dated spike, and no source ties it to any organic or organized campus event elsewhere on this map.",
+    demographicsNote: "No independent demographic data published for this chapter specifically.",
+    tags: ["npl", "infrastructure", "disciple-making-movement", "no-single-event", "unverified-link-to-campus-wave", "low-confidence"],
+    articles: [
+      {
+        title: "No Place Left New York",
+        source: "No Place Left New York",
+        url: "https://www.nplnewyork.com/",
+        date: "2025-01-01",
+      },
+    ],
+  },
 ];
