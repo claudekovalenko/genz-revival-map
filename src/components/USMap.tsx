@@ -5,6 +5,7 @@ import { scaleLinear, scaleSqrt } from "d3-scale";
 import type { RevivalEvent } from "../data/types";
 import { aggregateByState } from "../data/utils";
 import { partyColor, stateNameToCode, statePresidentialWinner2024 } from "../data/statePolitics";
+import { estimatedSize, momentumByState, repeatSiteKeys, type MomentumTier } from "../data/analysis";
 import statesTopology from "../geo/states-10m.json";
 
 const originColor: Record<RevivalEvent["origin"], string> = {
@@ -31,20 +32,22 @@ type Props = {
   events: RevivalEvent[];
 };
 
-type ShadeMode = "events" | "politics";
+type ShadeMode = "momentum" | "events" | "politics";
 
-/** Pulls a rough headcount out of the free-text attendance field, falling back to baptism count. */
-function estimatedSize(e: RevivalEvent): number {
-  const match = e.estimatedAttendance?.replace(/,/g, "").match(/(\d+)/);
-  if (match) return parseInt(match[1], 10);
-  if (e.baptismsCount) return e.baptismsCount * 15;
-  return 0;
-}
+const momentumColor: Record<MomentumTier, string> = {
+  high: "#b91c1c",
+  building: "#ea580c",
+  emerging: "#fbbf24",
+  none: "#efeae2",
+};
 
 export default function USMap({ events }: Props) {
   const navigate = useNavigate();
   const [tooltip, setTooltip] = useState<Tooltip>(null);
-  const [shadeMode, setShadeMode] = useState<ShadeMode>("events");
+  const [shadeMode, setShadeMode] = useState<ShadeMode>("momentum");
+
+  const momentum = useMemo(() => momentumByState(events), [events]);
+  const repeatKeys = useMemo(() => repeatSiteKeys(events), [events]);
 
   const aggregates = useMemo(() => aggregateByState(events), [events]);
   const maxCount = useMemo(
@@ -72,6 +75,7 @@ export default function USMap({ events }: Props) {
         <span className="text-sm font-semibold">Shade states by:</span>
         {(
           [
+            { value: "momentum", label: "Momentum (where it's building)", swatch: momentumColor.high },
             { value: "events", label: "Event density", swatch: "#7c3aed" },
             { value: "politics", label: "2024 presidential vote (red/blue)", swatch: partyColor.R },
           ] as { value: ShadeMode; label: string; swatch: string }[]
@@ -100,11 +104,14 @@ export default function USMap({ events }: Props) {
               const count = agg?.count ?? 0;
               const code = stateNameToCode[name];
               const winner = code ? statePresidentialWinner2024[code] : undefined;
+              const mo = momentum.get(name);
               const fill =
                 shadeMode === "politics"
                   ? winner
                     ? partyColor[winner]
                     : "#efeae2"
+                  : shadeMode === "momentum"
+                  ? momentumColor[mo?.tier ?? "none"]
                   : count > 0
                   ? colorScale(count)
                   : "#efeae2";
@@ -112,6 +119,12 @@ export default function USMap({ events }: Props) {
               const tooltipBody =
                 shadeMode === "politics"
                   ? `${winner === "R" ? "Trump" : winner === "D" ? "Harris" : "No data"} won in 2024 · ${eventSummary}`
+                  : shadeMode === "momentum"
+                  ? mo
+                    ? `Momentum ${mo.score}/100 · ${mo.recentEvents} recent, ${mo.organicEvents} organic${
+                        mo.repeatSites > 0 ? `, ${mo.repeatSites} repeat site${mo.repeatSites === 1 ? "" : "s"}` : ""
+                      }`
+                    : "No documented activity — untested ground"
                   : eventSummary;
               return (
                 <Geography
@@ -162,6 +175,15 @@ export default function USMap({ events }: Props) {
             onMouseLeave={() => setTooltip(null)}
             onClick={() => navigate(`/event/${e.id}`)}
           >
+            {repeatKeys.has(`${e.city}|${e.stateCode}`) && (
+              <circle
+                r={markerRadiusScale(estimatedSize(e)) + 4}
+                fill="none"
+                stroke="#16a34a"
+                strokeWidth={2}
+                style={{ pointerEvents: "none" }}
+              />
+            )}
             <circle
               r={markerRadiusScale(estimatedSize(e))}
               fill={e.tags.includes("npl") ? nplColor : originColor[e.origin]}
@@ -203,6 +225,30 @@ export default function USMap({ events }: Props) {
           </span>
           Dot size = reported attendance or baptisms (where known)
         </span>
+        <span className="flex items-center gap-1.5">
+          <span className="inline-block w-3 h-3 rounded-full border-2" style={{ borderColor: "#16a34a" }} />
+          Green ring = repeat site (activity in 2+ years)
+        </span>
+        {shadeMode === "momentum" && (
+          <>
+            <span className="flex items-center gap-1.5">
+              <span className="inline-block w-2.5 h-2.5 rounded" style={{ background: momentumColor.high }} />
+              High momentum
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="inline-block w-2.5 h-2.5 rounded" style={{ background: momentumColor.building }} />
+              Building
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="inline-block w-2.5 h-2.5 rounded" style={{ background: momentumColor.emerging }} />
+              Emerging
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="inline-block w-2.5 h-2.5 rounded" style={{ background: momentumColor.none }} />
+              No documented activity
+            </span>
+          </>
+        )}
         {shadeMode === "events" && (
           <span className="flex items-center gap-1.5">
             <span className="inline-block w-2.5 h-2.5 rounded" style={{ background: "#7c3aed" }} />
@@ -222,6 +268,15 @@ export default function USMap({ events }: Props) {
           </>
         )}
       </div>
+      {shadeMode === "momentum" && (
+        <p className="text-xs text-black/40 dark:text-white/35 mt-2 max-w-2xl">
+          Momentum is derived from this dataset only: recent events count more than old ones, organic
+          outbreaks count more than booked touring stops, and places that hosted activity in 2+ separate
+          years get a bonus. It measures where documented activity is <em>building</em>, not just where the
+          most events ever happened. A pale state means nothing here got documented — which is not proof
+          nothing happened. See <Link to="/about" className="underline">methodology</Link>.
+        </p>
+      )}
       {shadeMode === "politics" && (
         <p className="text-xs text-black/40 dark:text-white/35 mt-2 max-w-2xl">
           Shown for descriptive comparison only — winner-only, not vote margin, per state's 2024 presidential
