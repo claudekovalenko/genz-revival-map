@@ -176,6 +176,109 @@ export function repeatSiteKeys(events: RevivalEvent[]): Set<string> {
   return new Set(repeatSites(events).map((s) => `${s.city}|${s.stateCode}`));
 }
 
+const MONTH_NAMES = [
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+];
+
+export type SeasonPoint = { month: string; monthNum: number; count: number };
+
+/**
+ * When in the calendar year events actually happen. The academic calendar
+ * turns out to be the strongest scheduling signal in the dataset: activity
+ * concentrates hard in the opening weeks of the spring and fall semesters.
+ */
+export function seasonality(events: RevivalEvent[]): SeasonPoint[] {
+  const counts = new Array(12).fill(0);
+  for (const e of events) {
+    const m = parseInt(e.startDate.split("-")[1], 10);
+    if (m >= 1 && m <= 12) counts[m - 1] += 1;
+  }
+  return counts.map((count, i) => ({ month: MONTH_NAMES[i], monthNum: i + 1, count }));
+}
+
+export type PipelineCase = {
+  city: string;
+  stateCode: string;
+  organicYear: number;
+  organizedYear: number;
+  organicName: string;
+  organizedName: string;
+  organicId: string;
+  organizedId: string;
+  monthsBetween: number;
+};
+
+/**
+ * The clearest causal-looking sequence in the dataset: a place has an
+ * unplanned, grassroots outbreak, and a professionally-produced touring
+ * event follows at the same location months later. Documented at multiple
+ * sites, in different states, in different years — which makes it the most
+ * repeatable pattern here, and the most useful one operationally.
+ */
+export function organicToOrganizedPipeline(events: RevivalEvent[]): PipelineCase[] {
+  const byCity = new Map<string, RevivalEvent[]>();
+  for (const e of events) {
+    const key = `${e.city}|${e.stateCode}`;
+    const list = byCity.get(key);
+    if (list) list.push(e);
+    else byCity.set(key, [e]);
+  }
+
+  const cases: PipelineCase[] = [];
+  for (const [key, cityEvents] of byCity) {
+    const sorted = [...cityEvents].sort((a, b) => a.startDate.localeCompare(b.startDate));
+    const organic = sorted.find((e) => e.origin === "organic");
+    if (!organic) continue;
+    const organized = sorted.find((e) => e.origin === "organized" && e.startDate > organic.startDate);
+    if (!organized) continue;
+
+    const [city, stateCode] = key.split("|");
+    const monthsBetween = Math.round(
+      (new Date(organized.startDate).getTime() - new Date(organic.startDate).getTime()) /
+        (1000 * 60 * 60 * 24 * 30.44)
+    );
+
+    cases.push({
+      city,
+      stateCode,
+      organicYear: organic.year,
+      organizedYear: organized.year,
+      organicName: organic.name,
+      organizedName: organized.name,
+      organicId: organic.id,
+      organizedId: organized.id,
+      monthsBetween,
+    });
+  }
+
+  return cases.sort((a, b) => a.organicYear - b.organicYear);
+}
+
+/**
+ * How concentrated the organized side is in a small number of operators.
+ * Counts events carrying a given organization tag.
+ */
+export function tagShare(events: RevivalEvent[], tag: string): { count: number; pct: number } {
+  const count = events.filter((e) => e.tags.includes(tag)).length;
+  return { count, pct: events.length ? Math.round((count / events.length) * 100) : 0 };
+}
+
+/**
+ * Documented baptisms split by how the event started. Organized events
+ * dominate the totals — scale is a function of production, not spontaneity.
+ */
+export function baptismsByOrigin(events: RevivalEvent[]): { organic: number; organized: number } {
+  let organic = 0;
+  let organized = 0;
+  for (const e of events) {
+    if (!e.baptismsCount) continue;
+    if (e.origin === "organic") organic += e.baptismsCount;
+    else organized += e.baptismsCount;
+  }
+  return { organic, organized };
+}
+
 /**
  * Year-over-year direction for the whole set: is documented activity
  * accelerating, flat, or falling off in the most recent window?

@@ -15,6 +15,20 @@ const findings: Finding[] = [
       "If the goal really is a fourth-generation movement, the metric to start tracking isn't attendance or baptism counts at all — it's whether any single person from any of these events went on to disciple someone, who discipled someone, who discipled someone. Nothing in this dataset currently measures that chain. That's a concrete, buildable next step: pick one campus with strong momentum (Texas A&M is the obvious candidate given its escalation pattern) and start tracking disciple-generations specifically, the way DMM practitioners already do elsewhere.",
   },
   {
+    claim: "This whole phenomenon runs on the academic calendar — there are exactly two windows a year.",
+    evidence:
+      "Sorting every event by calendar month, activity concentrates overwhelmingly in February (the largest single month), September (second), and January. Those are the opening weeks of the spring and fall semesters. Summer — June, July, August — is nearly empty, and so is the back half of spring. This holds across organic outbreaks and organized touring stops alike, and across every year in the dataset.",
+    soWhat:
+      "Anything built to reach students has roughly two live windows a year, and they are short. That's a scheduling constraint with real budget implications: staffing, funding cycles, and campaign planning organized around a fiscal year or a church calendar will systematically miss the moments when students are actually reachable. Build backwards from late January and early September.",
+  },
+  {
+    claim: "There's a repeatable sequence — spontaneous outbreak first, organized event about six months later.",
+    evidence:
+      "At three separate campuses, in three different states, in three different years, the same order of operations shows up: College Station, TX (organic Feb 2023 → organized Sept 2023, 7 months), Columbus, OH (organic Aug 2024 → organized Feb 2025, 6 months), and Pittsburgh, PA (organic Sept 2025 → organized March 2026, 7 months). In each case an unplanned, student-led moment came first, and a professionally-produced touring event followed at the same location roughly half a year later — and drew far larger crowds.",
+    soWhat:
+      "An unplanned outbreak isn't just a nice story; it's an early targeting signal with a consistent lead time. The six-to-seven month lag is the actionable part — it's long enough to mobilize into. Rather than picking campuses cold, watch for spontaneous activity and move into those places on that clock. This is the closest thing to a repeatable playbook in the entire dataset, and it's been independently reproduced three times.",
+  },
+  {
     claim: "Organized mega-events happen almost every year. Organic outbreaks almost never do.",
     evidence:
       "An organized, professionally-produced event (The Call, Passion, Azusa Now, IF:Gathering, The Send, Unite US) appears in nearly every year from 2012 to 2022. Unplanned, grassroots \"organic\" outbreaks are almost entirely absent until February 2023, then spike hard and taper.",
