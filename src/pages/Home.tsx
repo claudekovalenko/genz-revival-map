@@ -6,7 +6,15 @@ import OriginFilter, { type OriginFilterValue } from "../components/OriginFilter
 import NplFilter from "../components/NplFilter";
 import { revivals } from "../data/revivals";
 import { filterByYear, maxYear, minYear, totalDocumentedBaptisms, type YearMode } from "../data/utils";
-import { activityTrend, momentumByState, repeatSites } from "../data/analysis";
+import {
+  activityTrend,
+  baptismsByOrigin,
+  momentumByState,
+  organicToOrganizedPipeline,
+  repeatSites,
+  seasonality,
+  tagShare,
+} from "../data/analysis";
 import { stateNameToCode } from "../data/statePolitics";
 
 export default function Home() {
@@ -35,6 +43,10 @@ export default function Home() {
     const active = new Set(filtered.map((e) => e.stateCode));
     return Object.values(stateNameToCode).filter((c) => c !== "DC" && !active.has(c));
   }, [filtered]);
+  const season = useMemo(() => seasonality(filtered), [filtered]);
+  const pipeline = useMemo(() => organicToOrganizedPipeline(filtered), [filtered]);
+  const uniteShare = useMemo(() => tagShare(filtered, "unite-us"), [filtered]);
+  const baptismSplit = useMemo(() => baptismsByOrigin(filtered), [filtered]);
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8 flex flex-col gap-6">
@@ -188,6 +200,132 @@ export default function Home() {
           attention, which is related to but not the same as more happening.
         </p>
       </div>
+
+      <div>
+        <h2 className="text-lg font-semibold tracking-tight">The pattern behind the map</h2>
+        <p className="text-sm text-black/60 dark:text-white/50 mt-1 max-w-2xl">
+          Three structural findings that hold across the whole dataset — the parts that are actually repeatable,
+          rather than one-off stories.
+        </p>
+      </div>
+
+      <div className="flex flex-col gap-4">
+        <div className="bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-5">
+          <div className="flex items-baseline gap-2 flex-wrap">
+            <h3 className="font-semibold">1. This runs on the academic calendar, not the church calendar.</h3>
+          </div>
+          <p className="text-sm text-black/70 dark:text-white/60 leading-relaxed mt-1">
+            Activity concentrates hard in the opening weeks of the two semesters — February and September carry
+            the load, with January close behind. Summer is nearly empty.
+          </p>
+          <Seasonality data={season} />
+          <p className="text-sm leading-relaxed border-l-2 border-amber-500/50 pl-3 mt-3">
+            <strong>So what:</strong> there are two windows a year when students are reachable and something can
+            actually catch. Anything aimed at campuses should be built and staffed to land in those windows —
+            planning on a fiscal-year or church-calendar rhythm will miss them.
+          </p>
+        </div>
+
+        {pipeline.length > 0 && (
+          <div className="bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-5">
+            <h3 className="font-semibold">
+              2. There's a repeatable sequence: spontaneous outbreak first, organized event ~6 months later.
+            </h3>
+            <p className="text-sm text-black/70 dark:text-white/60 leading-relaxed mt-1">
+              At {pipeline.length} separate locations, in {new Set(pipeline.map((p) => p.stateCode)).size} different
+              states and {new Set(pipeline.map((p) => p.organicYear)).size} different years, the same order of
+              operations shows up: something unplanned happens, then a touring ministry arrives at that same
+              campus roughly half a year later and scales it.
+            </p>
+            <div className="flex flex-col gap-2 mt-3">
+              {pipeline.map((p) => (
+                <div
+                  key={`${p.city}-${p.stateCode}`}
+                  className="flex items-center gap-2 text-sm flex-wrap bg-black/[0.03] dark:bg-white/[0.03] rounded-lg px-3 py-2"
+                >
+                  <span className="font-medium min-w-[9rem]">
+                    {p.city}, {p.stateCode}
+                  </span>
+                  <Link to={`/event/${p.organicId}`} className="text-amber-700 dark:text-amber-500 underline underline-offset-2">
+                    organic {p.organicYear}
+                  </Link>
+                  <span className="text-black/40 dark:text-white/30">→ {p.monthsBetween} mo →</span>
+                  <Link to={`/event/${p.organizedId}`} className="text-sky-700 dark:text-sky-400 underline underline-offset-2">
+                    organized {p.organizedYear}
+                  </Link>
+                </div>
+              ))}
+            </div>
+            <p className="text-sm leading-relaxed border-l-2 border-amber-500/50 pl-3 mt-3">
+              <strong>So what:</strong> an unplanned outbreak is an early signal, not just a nice story. The
+              consistent ~6-month lag is a window to move into — the places where something spontaneous just
+              happened are the highest-probability sites for the next organized push. Watching for those signals
+              is a cheaper targeting strategy than picking campuses cold.
+            </p>
+          </div>
+        )}
+
+        <div className="bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-5">
+          <h3 className="font-semibold">3. Scale is concentrated — a few operators carry most of it.</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-3">
+            <div>
+              <div className="text-2xl font-semibold">{uniteShare.pct}%</div>
+              <p className="text-xs text-black/60 dark:text-white/50 leading-relaxed mt-0.5">
+                of all events currently shown carry the Unite US tag ({uniteShare.count} of {filtered.length}) —
+                a single organization accounting for the largest share of documented activity.
+              </p>
+            </div>
+            <div>
+              <div className="text-2xl font-semibold">
+                {baptismSplit.organic + baptismSplit.organized > 0
+                  ? Math.round(
+                      (baptismSplit.organized / (baptismSplit.organic + baptismSplit.organized)) * 100
+                    )
+                  : 0}
+                %
+              </div>
+              <p className="text-xs text-black/60 dark:text-white/50 leading-relaxed mt-0.5">
+                of documented baptisms come from organized events, not spontaneous ones (
+                {baptismSplit.organized.toLocaleString()} vs. {baptismSplit.organic.toLocaleString()}).
+                Spontaneity starts things; production is what scales them.
+              </p>
+            </div>
+          </div>
+          <p className="text-sm leading-relaxed border-l-2 border-amber-500/50 pl-3 mt-3">
+            <strong>So what:</strong> partnering with the handful of groups already operating at scale gets
+            further, faster, than standing up something parallel. But it's also a concentration risk — if the
+            documented picture depends this heavily on one operator's touring schedule, the map partly tracks
+            that organization's calendar rather than the country's spiritual condition.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Seasonality({ data }: { data: { month: string; count: number }[] }) {
+  const max = Math.max(1, ...data.map((d) => d.count));
+  return (
+    <div className="flex items-end gap-1 h-24 mt-1">
+      {data.map((d) => {
+        const peak = d.count >= max * 0.6;
+        return (
+          <div key={d.month} className="flex-1 flex flex-col items-center gap-1" title={`${d.month}: ${d.count}`}>
+            <span className="text-[10px] tabular-nums text-black/40 dark:text-white/30">{d.count || ""}</span>
+            <div
+              className={`w-full rounded-t ${peak ? "bg-red-700" : "bg-black/20 dark:bg-white/20"}`}
+              style={{ height: `${Math.max(2, (d.count / max) * 100)}%` }}
+            />
+            <span
+              className={`text-[10px] ${
+                peak ? "font-semibold text-red-700 dark:text-red-500" : "text-black/40 dark:text-white/30"
+              }`}
+            >
+              {d.month}
+            </span>
+          </div>
+        );
+      })}
     </div>
   );
 }
