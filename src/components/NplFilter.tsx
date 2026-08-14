@@ -22,7 +22,7 @@ export default function NplFilter({ value, onChange }: Props) {
           {value ? "NPL only" : "Show NPL"}
         </button>
       </div>
-      <p className="text-xs text-black/50 dark:text-white/40">
+      <p className="hidden sm:block text-xs text-black/50 dark:text-white/40">
         Show only No Place Left / e3 Partners training networks — infrastructure, not dated events.
       </p>
     </div>

@@ -34,7 +34,7 @@ export default function OriginFilter({ value, onChange }: Props) {
           </button>
         ))}
       </div>
-      <p className="text-xs text-black/50 dark:text-white/40">
+      <p className="hidden sm:block text-xs text-black/50 dark:text-white/40">
         {options.find((o) => o.value === value)?.hint}
       </p>
     </div>
