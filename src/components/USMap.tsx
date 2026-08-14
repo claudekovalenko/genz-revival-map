@@ -71,8 +71,8 @@ export default function USMap({ events }: Props) {
 
   return (
     <div className="relative">
-      <div className="flex flex-wrap items-center gap-2 mb-3">
-        <span className="text-sm font-semibold">Shade states by:</span>
+      <div className="flex flex-wrap items-center gap-1.5 mb-3">
+        <span className="text-xs sm:text-sm font-semibold w-full sm:w-auto">Shade states by:</span>
         {(
           [
             { value: "momentum", label: "Momentum (where it's building)", swatch: momentumColor.high },
@@ -84,7 +84,7 @@ export default function USMap({ events }: Props) {
             key={opt.value}
             type="button"
             onClick={() => setShadeMode(opt.value)}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm border-2 transition-colors ${
+            className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs sm:text-sm border-2 transition-colors ${
               shadeMode === opt.value
                 ? "bg-black text-white border-black dark:bg-white dark:text-black dark:border-white"
                 : "border-black/20 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/10"

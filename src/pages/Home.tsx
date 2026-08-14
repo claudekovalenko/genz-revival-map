@@ -30,18 +30,19 @@ export default function Home() {
   const trend = useMemo(() => activityTrend(filtered), [filtered]);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8 flex flex-col gap-6">
-      <div>
-        <h1 className="text-2xl md:text-3xl font-semibold tracking-tight">
+    <div className="max-w-6xl mx-auto px-4 py-5 sm:py-8 flex flex-col gap-4 sm:gap-6">
+      <div className="order-0">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight">
           Where has Gen Z revival activity spiked?
         </h1>
         <p className="text-sm text-black/60 dark:text-white/50 mt-1 max-w-2xl">
-          Publicly reported Protestant revival activity in the U.S., every entry sourced. Hover for a quick
-          read, click to go deeper.
+          Publicly reported Protestant revival activity in the U.S., every entry sourced. Tap for a quick read,
+          then go deeper.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {/* Map first on phones — it's the point of the page. Filters lead on wider screens. */}
+      <div className="order-2 sm:order-1 grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
         <YearSlider
           year={year}
           minYear={minYear}
@@ -54,11 +55,11 @@ export default function Home() {
         <NplFilter value={npl} onChange={setNpl} />
       </div>
 
-      <div className="bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-3">
+      <div className="order-1 sm:order-2 bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-3">
         <USMap events={filtered} />
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div className="order-3 grid grid-cols-2 md:grid-cols-4 gap-3">
         <Stat label="Events" value={filtered.length.toString()} />
         <Stat label="States" value={new Set(filtered.map((e) => e.stateCode)).size.toString()} />
         <Stat
@@ -77,7 +78,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-5">
+      <div className="order-4 bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-5">
         <div className="flex items-baseline justify-between gap-3 flex-wrap mb-3">
           <h2 className="font-semibold">The three things this map shows</h2>
           <Link to="/insights" className="text-sm underline text-black/60 dark:text-white/50">
@@ -101,7 +102,7 @@ export default function Home() {
         </ol>
       </div>
 
-      <p className="text-xs text-black/50 dark:text-white/40 leading-relaxed">
+      <p className="order-5 text-xs text-black/50 dark:text-white/40 leading-relaxed">
         A curated sample, not a census — it reflects what got covered. Baptism totals are a floor, since most
         events report only "hundreds." Read the{" "}
         <Link to="/about" className="underline">
