@@ -1,0 +1,45 @@
+{
+  "name": "Gen Z Revival Map",
+  "short_name": "Revival Map",
+  "description": "A curated, individually-sourced map of publicly reported Gen Z revival activity across the United States — where it is happening, where it is building, and what the data does and does not support.",
+  "id": "/genz-revival-map/",
+  "start_url": "/genz-revival-map/",
+  "scope": "/genz-revival-map/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#121214",
+  "theme_color": "#121214",
+  "categories": ["education", "news", "reference"],
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Insights",
+      "short_name": "Insights",
+      "url": "/genz-revival-map/#/insights"
+    },
+    {
+      "name": "Findings",
+      "short_name": "Findings",
+      "url": "/genz-revival-map/#/findings"
+    }
+  ]
+}

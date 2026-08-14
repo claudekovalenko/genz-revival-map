@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
+import InstallPrompt from "./InstallPrompt";
 
 const navItems = [
   { to: "/", label: "Map", end: true },
@@ -48,6 +49,7 @@ export default function Layout() {
           .
         </div>
       </footer>
+      <InstallPrompt />
     </div>
   );
 }
