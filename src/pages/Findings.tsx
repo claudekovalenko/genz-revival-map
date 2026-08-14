@@ -8,153 +8,138 @@ type Finding = {
 
 const findings: Finding[] = [
   {
-    claim: "\"Fourth generation\" isn't a vague aspiration — it's the actual technical bar disciple-making practitioners use to call something a movement.",
-    evidence:
-      "The No Place Left / Disciple-Making Movement (DMM) network — a decentralized coalition training people to disciple others who disciple others, tracked as \"generations\" — explicitly defines a movement as at least 100 churches that have multiplied to a fourth generation or beyond. Almost nothing on this map is tracked that way: events here report attendance and baptisms at generation zero (the event itself), not whether any disciple chain reached a second, third, or fourth generation afterward.",
-    soWhat:
-      "If the goal really is a fourth-generation movement, the metric to start tracking isn't attendance or baptism counts at all — it's whether any single person from any of these events went on to disciple someone, who discipled someone, who discipled someone. Nothing in this dataset currently measures that chain. That's a concrete, buildable next step: pick one campus with strong momentum (Texas A&M is the obvious candidate given its escalation pattern) and start tracking disciple-generations specifically, the way DMM practitioners already do elsewhere.",
+    claim: "It runs on the academic calendar — two windows a year.",
+    evidence: "February, September and January hold 45 of 70 events. June and August have one each. December has none.",
+    soWhat: "Budget and staff to land in late January and early September. A fiscal-year rhythm arrives too late.",
   },
   {
-    claim: "This whole phenomenon runs on the academic calendar — there are exactly two windows a year.",
+    claim: "Spontaneous first, organized about six months later.",
     evidence:
-      "Sorting every event by calendar month, activity concentrates overwhelmingly in February (the largest single month), September (second), and January. Those are the opening weeks of the spring and fall semesters. Summer — June, July, August — is nearly empty, and so is the back half of spring. This holds across organic outbreaks and organized touring stops alike, and across every year in the dataset.",
-    soWhat:
-      "Anything built to reach students has roughly two live windows a year, and they are short. That's a scheduling constraint with real budget implications: staffing, funding cycles, and campaign planning organized around a fiscal year or a church calendar will systematically miss the moments when students are actually reachable. Build backwards from late January and early September.",
+      "Same sequence at three campuses, three states, three years: College Station (Feb→Sep 2023), Columbus (Aug 2024→Feb 2025), Pittsburgh (Sep 2025→Mar 2026).",
+    soWhat: "An unplanned outbreak is an early signal with a consistent lead time. Watch for them instead of picking campuses cold.",
   },
   {
-    claim: "There's a repeatable sequence — spontaneous outbreak first, organized event about six months later.",
+    claim: "Organized events happen every year. Organic outbreaks almost never do.",
     evidence:
-      "At three separate campuses, in three different states, in three different years, the same order of operations shows up: College Station, TX (organic Feb 2023 → organized Sept 2023, 7 months), Columbus, OH (organic Aug 2024 → organized Feb 2025, 6 months), and Pittsburgh, PA (organic Sept 2025 → organized March 2026, 7 months). In each case an unplanned, student-led moment came first, and a professionally-produced touring event followed at the same location roughly half a year later — and drew far larger crowds.",
-    soWhat:
-      "An unplanned outbreak isn't just a nice story; it's an early targeting signal with a consistent lead time. The six-to-seven month lag is the actionable part — it's long enough to mobilize into. Rather than picking campuses cold, watch for spontaneous activity and move into those places on that clock. This is the closest thing to a repeatable playbook in the entire dataset, and it's been independently reproduced three times.",
+      "A produced event appears in nearly every year from 2012 on. Unplanned outbreaks are near-absent until February 2023, then spike and taper.",
+    soWhat: "A steady circuit of big events produces a steady circuit of big events. What's scarce is the conditions that let an unplanned moment run long.",
   },
   {
-    claim: "Organized mega-events happen almost every year. Organic outbreaks almost never do.",
+    claim: "Every organic outbreak had a specific trigger — not general \"hunger.\"",
     evidence:
-      "An organized, professionally-produced event (The Call, Passion, Azusa Now, IF:Gathering, The Send, Unite US) appears in nearly every year from 2012 to 2022. Unplanned, grassroots \"organic\" outbreaks are almost entirely absent until February 2023, then spike hard and taper.",
-    soWhat:
-      "A steady circuit of big, well-run events does not, by itself, produce a revival — it produces a steady circuit of big, well-run events. If the goal is a genuine next-generation movement rather than another well-attended conference, the leverage isn't more programming, it's building the conditions that let an unplanned moment run long instead of getting cut off at the scheduled end time.",
+      "Two kinds only: an unscripted service given permission to keep going (Asbury and the campuses that followed within weeks), or a shared national shock (Charlie Kirk's assassination).",
+    soWhat: "You can't schedule one, but you can be ready: chaplains free to let a service overrun, and response networks that can move within hours.",
   },
   {
-    claim: "Every real organic outbreak has a specific trigger — not a general \"hunger.\"",
+    claim: "Once a ministry finds a receptive campus, growth compounds fast.",
     evidence:
-      "The organic entries cluster around exactly two kinds of moments: an unscripted worship service given permission to keep going (Asbury, and the 8 campuses that mirrored it within weeks), and a shared national shock (a campus team's own initiative at Ohio State; Charlie Kirk's assassination). No organic entry in this dataset happened in a vacuum.",
-    soWhat:
-      "You can't schedule a revival, but you can prepare for the moment one might start: chaplains and campus ministers with standing permission to let a service run past its slot, and existing prayer/response networks ready to catch a national shock within hours rather than improvising one from scratch.",
+      "Texas A&M: spontaneous gathering (Feb 2023) → 124 baptisms at an organized stop (Sep 2023) → 10,000 students one year later. Roughly 10x in twelve months.",
+    soWhat: "Notice where something already caught and reinvest there, rather than spreading thin across new campuses.",
   },
   {
-    claim: "Once a touring ministry finds a receptive campus, growth compounds fast.",
+    claim: "Almost nobody measures what happens after the altar call.",
     evidence:
-      "Texas A&M went from a spontaneous outdoor gathering (Feb 2023) to an organized Unite US stop with 124 baptisms (Sept 2023) to a 10,000-student arena event one year later (Sept 2024) — same campus, same ministry relationship, roughly 10x in twelve months.",
-    soWhat:
-      "The highest-leverage move isn't spreading a ministry thin across many new campuses at once — it's noticing where something already caught, and doubling down there with real follow-up investment before moving on.",
+      "Every event reports attendance and often baptisms. Not one has an independent study of how many decisions became sustained practice a year later.",
+    soWhat: "The biggest gap in the space, so the biggest opening. Whoever measures one-year retention first will know something no one else does.",
   },
   {
-    claim: "Almost nobody is measuring what happens after the altar call.",
+    claim: "Coverage follows existing infrastructure — including in the Northeast.",
     evidence:
-      "Every single event in this dataset reports attendance and, often, baptism or \"decision\" counts. Not one has an independent, long-term study of how many of those decisions became a sustained faith practice a year later. \"Follow-through\" fields on event pages are mostly organizer anecdotes, not research.",
-    soWhat:
-      "This is the biggest gap in the entire space, which makes it the biggest opportunity: whoever builds the actual discipleship/follow-up infrastructure — small groups, local church handoffs, mentorship — and measures it, will know something real about whether any of this lasts, while everyone else is still guessing from vibes.",
+      "Events cluster in the evangelical-college corridor (TX, GA, AL, MS, TN, OH, FL). The exception: Christian Union runs weekly Bible courses across eight Ivy campuses, reaching ~10% of Princeton undergrads.",
+    soWhat: "The Northeast isn't empty — it has a quieter, weekly-program model rather than arena nights. The West Coast and big secular publics remain genuinely untested.",
   },
   {
-    claim: "Coverage concentrates in places that already had campus ministry infrastructure — but the Northeast has its own, quieter version of the same thing.",
+    claim: "The one survey-confirmed trend is narrower than \"Gen Z revival\": young men.",
     evidence:
-      "Events cluster in the evangelical-college corridor (TX, GA, AL, MS, TN, OH, FL) and thin out almost everywhere else. That's consistent with where established chaplaincy and campus-ministry networks already operate, not necessarily with where Gen Z spiritual openness is highest. The one documented exception: Christian Union, a standing ministry network running weekly Bible courses across Princeton, Columbia, Cornell, Yale, Harvard, Dartmouth, Brown, and Penn — at Princeton alone it reaches roughly 10% of undergraduates, larger than most groups on campus. No source connects it to the touring, arena-scale Unite US model or to any spike this dataset tracks; it runs on a slower, smaller-scale, weekly-program cadence instead.",
-    soWhat:
-      "The West Coast and big secular public universities outside the South remain comparatively untested, not necessarily unreceptive. But 'the Northeast has no campus ministry infrastructure' isn't quite right — it has a real one, just built for steady weekly discipleship rather than a single arena night with a headline attendance number. Whether that model could support (or already has, unreported) something like an Asbury-style spontaneous outbreak is an open, checkable question, not an assumption either way.",
+      "Barna 2025: Gen Z/Millennial men now out-attend women weekly for the first time in 25 years (46% vs. 44%). Gen Z women show no such reversal.",
+    soWhat: "What's working is working for young men. Plan for that specifically, and ask what a comparable on-ramp for young women looks like.",
   },
   {
-    claim: "The one hard, survey-confirmed trend is narrower than \"Gen Z revival\": it's specifically about young men.",
+    claim: "Baptism became a scheduled program — and the denominational data backs the surge.",
     evidence:
-      "Barna's 2025 data shows Gen Z/Millennial men now out-attending women weekly for the first time in 25 years of tracking (46% vs. 44% past-week attendance; 45% vs. 36% weekly overall). Gen Z women don't show the same reversal, and whole-population church membership (Gallup) and Gen Z's own Scripture engagement score (American Bible Society) both stayed flat-to-declining through the same years.",
-    soWhat:
-      "Whatever is working right now appears to be working specifically for young men. A strategy that assumes a broad-based Gen Z awakening will misallocate effort; a strategy that asks \"what is actually reaching young men, and how do we build something comparable for young women\" is working from what the data actually shows.",
+      "Pirate's Cove (4,166) scaled into Baptize California (12,216 in a day) and Baptize America (26,657 across 50 states). Southern Baptist records show four straight years of growth to 250,643 in 2024.",
+    soWhat: "The surge is real in the most conservative source available. But these are all-ages events, and SBC membership kept falling — conversions aren't yet becoming retained members.",
   },
   {
-    claim: "Baptism has shifted from revival's outcome to its organized program — and hard denominational data confirms the surge is real.",
+    claim: "No Place Left's footprint barely overlaps with where revival actually broke out.",
     evidence:
-      "Pirate's Cove (4,166 baptized, Pentecost 2023) scaled into Baptize California (12,216 in one day across 300 churches, 2024) and Baptize America (26,657 across 1,080 events in all 50 states, June 2025) — an annual, repeatable mass-baptism program. Independently, Southern Baptist Annual Church Profile counts — actual denominational records, not organizer estimates — show baptisms rising four straight years to 250,643 in 2024, the most since 2017, even while total SBC membership kept declining.",
-    soWhat:
-      "Two things follow. First, the baptism surge is not just hype — it shows up in the most conservative data source available. Second, the mass-baptism model proves large-scale public commitment can be organized on a calendar (Pentecost Sunday, every year) rather than waiting for spontaneous moments — but note these are all-ages events; connecting them specifically to Gen Z discipleship is the unproven step, and the falling-membership backdrop says conversions aren't yet translating into retained members.",
+      "Six NPL entries (AL, TX×3, FL×2). Organic outbreaks happened in KY, OH, AL, TN, TX, LA, VA, IN, UT. Kentucky has the densest cluster and zero NPL chapters. No source links any NPL entry to any outbreak.",
+    soWhat: "Two parallel tracks, not one causal chain: steady disciple-making infrastructure in one set of places, unplanned spikes in another.",
   },
   {
-    claim: "No Place Left's footprint barely overlaps with where spontaneous revival actually happened — but it does overlap with itself.",
+    claim: "People are opening the Bible more — and trusting it less.",
     evidence:
-      "This map now has six No Place Left / DMM-affiliated entries — MetaCamp (Dadeville, AL, 2012), e3 Partners (Plano, TX, 2012), a Jacksonville, FL chapter via First Coast United (2024), NoPlaceLeft Florida's statewide Gospel Push outreach (South Florida, 2025), an NPL Houston training hub (TX, 2024), and an unverified New Braunfels, TX Facebook page (2026). Organic outbreaks, by contrast, happened in KY (four separate campuses), OH, AL, TN, TX, LA, VA, IN, and UT. Only two states — AL and TX — appear on both lists, and even there no article connects any NPL entry to Samford, Auburn, Texas A&M, or Waco. What is documented, for the first time in this dataset, is a link between two NPL-affiliated entries themselves: NoPlaceLeft Florida's own site names e3 Partners as a direct partner on its Gospel Push outreach — a same-year, same-event collaboration, not just a shared training philosophy or one past employee in common.",
-    soWhat:
-      "If NPL infrastructure caused organic revival, its presence should predict where outbreaks happen — it doesn't. Kentucky has the single densest cluster of organic events on this entire map and zero sourced NPL chapters. But the Florida/e3 Partners partnership shows these DMM-style networks aren't isolated from each other — they actively coordinate, which is a more interesting and more sourced story than a phantom connection to campus revival: this looks like a real, self-sustaining infrastructure layer running in parallel to the organic wave, not feeding it and not competing with it.",
+      "Weekly Bible reading is at a decade high, led by young men. But only 36% of adults strongly agree it's totally accurate, down from 43% in 2000. Barna's summary: \"engagement is outpacing conviction.\"",
+    soWhat: "Getting people to open it is already happening. The work is what comes after — teaching and community that turn a reading streak into conviction.",
   },
   {
-    claim: "People are opening the Bible more than they have in over a decade — but trusting it less than they used to.",
+    claim: "\"Fourth generation\" is the technical bar for a movement — nothing here meets it.",
     evidence:
-      "Barna's State of the Church 2025 report found weekly Bible reading among self-identified Christians at its highest point in over a decade, driven by young adults and — notably — young men, a demographic that has historically trailed women in Scripture reading. At the same time, only 36% of adults strongly agree the Bible is totally accurate in what it teaches, down from 43% in 2000. Barna CEO David Kinnaman's summary: \"engagement is outpacing conviction.\" That tracks with this map's own Scripture-engagement trend, which shows Gen Z as the least Scripture-engaged generation (10-14%) even through the same 2023-2025 window covered by the campus wave.",
-    soWhat:
-      "Rising Bible sales, app installs, and reading rates are a real, sourced trend — but they measure exposure, not belief, and Gen Z remains both the most phone-dependent generation on record (surveys put self-reported phone addiction at 69-83%) and the least Scripture-engaged by Barna's own classification. The opportunity isn't getting more people to open the app or the book — that's already happening. It's building whatever comes after opening it: teaching, community, and repetition that turns a five-minute YouVersion streak into actual conviction, before the same attention that opened the Bible gets pulled back to the other six-plus hours a day already spoken for.",
+      "Disciple-making networks define a movement as 100+ churches multiplied to a fourth generation. Everything on this map reports attendance and baptisms at generation zero.",
+    soWhat: "If that's the goal, the metric isn't crowd size — it's whether one person discipled someone, who discipled someone, who discipled someone. Pick one campus and start tracking it.",
   },
   {
-    claim: "Not everyone studying this agrees a real revival is happening — and that skepticism deserves a place here too.",
+    claim: "A few repeat organizers account for most of the organized events.",
     evidence:
-      "Religion researcher Ryan Burge has publicly pushed back on revival claims, telling Religion News Service he isn't seeing anything at the scale that would point toward a sustained, substantive nationwide shift — by his standard, a real revival would mean tens of millions more people at a house of worship this week than a year ago, not the much smaller numbers actually being reported. Pew's own reporting says there is no clear evidence a nationwide religious resurgence is underway. Burge's read on what's really happening: fewer young Christians overall, but the ones who remain are noticeably more committed — he compares it to reducing a sauce on the stove, where the volume drops but the flavor concentrates. Barna's own data is more mixed than the revival headlines suggest, too: Gen Z churchgoers attend only slightly more often than Millennial churchgoers (1.9 times a month vs. 1.8), and Barna's own CEO has said he'd call what he sees 'renewal,' not revival, as a researcher.",
-    soWhat:
-      "This map documents real, sourced, individually-verified events — that part isn't in dispute. What is genuinely contested is whether summing them up adds up to 'revival' at the national level, or whether that's a narrative laid on top of ordinary variation and good local reporting. Both things can be true at once: real events happened, and credible researchers still say the aggregate national trend line hasn't clearly moved — what's shifting may be intensity among a shrinking core, not the overall size of that core. Read every claim on this page with that tension in mind, not as a settled verdict either way.",
+      "Lou Engle's network produced The Call, Azusa Now and The Send. Jennie Allen's IF:Gathering connects to her co-hosting Texas A&M a decade later. Unite US alone carries 29% of all events here.",
+    soWhat: "Scale runs through a handful of long-running relationships. That's the fast path — and a concentration risk if the picture depends on one operator's calendar.",
   },
   {
-    claim: "Believers who've watched this closely see something worth real hope in it, not just a media narrative.",
+    claim: "Credible researchers say the national claim is overstated.",
     evidence:
-      "Actor and ministry leader Kirk Cameron, speaking ahead of America's 250th anniversary in 2026, argued the country is positioned for genuine spiritual awakening — pointing to the historical pattern that great awakenings tend to arrive during periods of moral decline, spiritual apathy, and national strain, and framing the current moment as ripe for one. That's an optimistic reading from inside the faith community, not a data point — but it's a live, public counterweight to the academic skepticism in the previous entry, and it's the same instinct driving the touring ministries and campus chaplains behind many of the organized events on this map.",
-    soWhat:
-      "Skepticism and hope aren't actually in conflict here — they're answering different questions. Researchers are asking whether the aggregate national numbers have moved; people like Cameron are making a faith claim about what this moment could become, not a statistical one. Held next to the sourced events on this map, that hope isn't baseless: real baptisms, real packed arenas, and real campus chapters happened. Whether they add up to a Great Awakening is still an open question — but it's a question worth being genuinely hopeful about, not just cautious about.",
+      "Ryan Burge sees nothing at the scale of a sustained national revival; Pew finds no clear evidence of a nationwide resurgence. The measured read: decline slowed, and those who remain are more committed.",
+    soWhat: "Both can be true — these events happened and are documented, and the national trend line hasn't clearly moved. Hold every claim here at that altitude.",
   },
   {
-    claim: "A small number of repeat organizers account for a large share of the organized events.",
+    claim: "And there's a serious case for hope, from people close to it.",
     evidence:
-      "Lou Engle's network produced The Call (2012), Azusa Now (2016), and The Send (2019) — three of the largest organized entries in this dataset, spanning seven years. Jennie Allen's IF:Gathering (2014) connects directly to her co-hosting the Texas A&M Unite US event a decade later (2024).",
-    soWhat:
-      "Durable relationships with a small number of connected ministry networks are a more reliable path to scale than waiting for another spontaneous Asbury. The organized side of this dataset is really a story about a handful of long-running relationships, not a series of independent events.",
+      "Kirk Cameron, ahead of America's 250th, argues the country is positioned for genuine awakening — noting that past awakenings arrived precisely during periods of decline and strain.",
+    soWhat: "Skepticism and hope answer different questions: one is about aggregate statistics, the other about what this moment could become. The real baptisms and full arenas make the hope non-trivial.",
   },
 ];
 
 export default function Findings() {
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8 flex flex-col gap-8">
+    <div className="max-w-3xl mx-auto px-4 py-5 sm:py-8 flex flex-col gap-5 sm:gap-6">
       <div>
-        <h1 className="text-2xl md:text-3xl font-semibold tracking-tight">Findings</h1>
-        <p className="text-sm text-black/60 dark:text-white/50 mt-1 max-w-2xl">
-          What the map and the survey data actually support, condensed into claims you can act on — each paired
-          with its evidence and what it means for building something that lasts, not just documenting what
-          already happened. See <Link to="/insights" className="underline">Insights</Link> for the underlying
-          charts and <Link to="/about" className="underline">About</Link> for the caveats these all inherit.
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight">Findings</h1>
+        <p className="text-sm text-black/60 dark:text-white/50 mt-1">
+          What the evidence supports, each with its basis and what to do about it.{" "}
+          <Link to="/insights" className="underline">
+            Charts
+          </Link>{" "}
+          ·{" "}
+          <Link to="/about" className="underline">
+            Caveats
+          </Link>
         </p>
       </div>
 
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-3">
         {findings.map((f, i) => (
           <div
             key={i}
-            className="bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-5"
+            className="bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-4 sm:p-5"
           >
             <div className="flex gap-3">
-              <span className="text-xs font-semibold text-black/30 dark:text-white/30 mt-0.5 tabular-nums">
+              <span className="text-xs font-semibold text-black/25 dark:text-white/25 mt-1 tabular-nums shrink-0">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-1.5 min-w-0">
                 <h2 className="font-semibold leading-snug">{f.claim}</h2>
                 <p className="text-sm text-black/60 dark:text-white/50 leading-relaxed">{f.evidence}</p>
-                <p className="text-sm leading-relaxed border-l-2 border-amber-500/50 pl-3 mt-1">{f.soWhat}</p>
+                <p className="text-sm leading-relaxed border-l-2 border-amber-500/60 pl-3">{f.soWhat}</p>
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      <div className="bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-5">
-        <h2 className="font-semibold mb-2">The honest limit on all of this</h2>
+      <div className="bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-4 sm:p-5">
+        <h2 className="font-semibold mb-1.5">The honest limit</h2>
         <p className="text-sm leading-relaxed text-black/70 dark:text-white/60">
-          This is 70 curated, press-covered events and a handful of national surveys — not a controlled study.
-          It can tell you what got covered and what patterns show up inside that coverage; it can't tell you the
-          true rate of organic revival versus organized events nationwide, because no one is counting the events
-          that never got press. Treat every "so what" above as the strongest read of the evidence gathered here,
-          worth testing against reality — not a settled conclusion.
+          70 press-covered events and a handful of national surveys — not a controlled study. It shows what got
+          covered and the patterns inside that coverage. Nobody is counting the events that never got press.
         </p>
       </div>
     </div>

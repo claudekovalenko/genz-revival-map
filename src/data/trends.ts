@@ -47,7 +47,7 @@ export const trends: TrendSeries[] = [
       url: "https://www.barna.com/research/young-adults-lead-resurgence-in-church-attendance/",
       date: "2025-09-01",
     },
-    note: "Single-year snapshot comparing Gen Z men (46%) vs. Gen Z women (44%) — included for the map's demographics view, not a multi-year trend.",
+    note: "Single-year snapshot: Gen Z men (46%) vs. women (44%). Not a multi-year trend.",
     points: [
       { year: 2025, label: "Gen Z men", value: 46 },
       { year: 2025, label: "Gen Z women", value: 44 },
@@ -63,7 +63,7 @@ export const trends: TrendSeries[] = [
       url: "https://www.washingtontimes.com/news/2024/dec/8/bible-sales-surge-gen-z-sick-tired-predecessors-se/",
       date: "2024-12-08",
     },
-    note: "2024 sales reached ~17 million units, up 22% year over year. Post-Kirk-assassination weekly sales spiked an additional 36% in September 2025 (short-term, not reflected in this annual index). Digital engagement points the same direction: YouVersion's Bible app passed 1 billion lifetime installs in November 2025, set a single-day install record (798,000 on Jan 5, 2025), and reported North American daily use up 15% year over year.",
+    note: "2024 sales reached ~17 million units, up 22% year over year. Weekly sales spiked a further 36% after Charlie Kirk's death (short-term, not in this annual index). YouVersion passed 1 billion lifetime installs in November 2025.",
     points: [
       { year: 2023, value: 100 },
       { year: 2024, value: 122 },
@@ -79,7 +79,7 @@ export const trends: TrendSeries[] = [
       url: "https://research.lifeway.com/2025/04/30/southern-baptists-membership-decline-continues-amid-other-areas-of-growth/",
       date: "2025-04-30",
     },
-    note: "The hardest data on this site: actual denominational counts, not organizer estimates or survey samples. Four consecutive years of growth — a streak not seen since the early 1990s — ending 2024 at the highest total since 2017. All-ages counts, not Gen Z-specific, and reported during the same years SBC total membership kept declining.",
+    note: "The hardest data on this site: actual denominational counts, not organizer estimates. Four straight years of growth, the highest total since 2017 — recorded while SBC membership kept declining.",
     points: [
       { year: 2020, value: 123.2 },
       { year: 2021, value: 154.7 },
@@ -98,7 +98,7 @@ export const trends: TrendSeries[] = [
       url: "https://news.gallup.com/poll/341963/church-membership-falls-below-majority-first-time.aspx",
       date: "2021-03-29",
     },
-    note: "The 15-year backdrop this whole project sits against: steady long-term decline, not a rebound, at the whole-population level. Any Gen Z-specific upturn shown elsewhere on this site is a divergence from this baseline, not a continuation of it.",
+    note: "The long backdrop this project sits against: steady decline at the whole-population level. Any Gen Z upturn shown elsewhere is a divergence from this baseline, not a continuation.",
     points: [
       { year: 2010, value: 61 },
       { year: 2020, value: 47 },
@@ -151,7 +151,7 @@ export const trends: TrendSeries[] = [
       url: "https://www.americanbible.org/news/press-releases/articles/new-research-shows-gen-z-is-the-least-scripture-engaged-generation/",
       date: "2023-04-01",
     },
-    note: "Gen Z remains the least Scripture-engaged generation by this measure even during the same years the campus revival wave was making headlines — a useful check against reading the event map as proof of a broad-based shift.",
+    note: "Gen Z remains the least Scripture-engaged generation by this measure, even through the years the campus wave was making headlines — a check against reading the map as proof of a broad shift.",
     points: [
       { year: 2021, value: 14 },
       { year: 2022, value: 12 },
@@ -185,7 +185,7 @@ export const trends: TrendSeries[] = [
       url: "https://www.livenowfox.com/news/gen-z-phone-addiction-bepresent-2024",
       date: "2024-01-01",
     },
-    note: "Cited alongside the Scripture-engagement trend above, not as a matched study — no single source directly compares phone time to Bible-reading time for the same Gen Z sample. Other surveys put Gen Z self-reported phone addiction anywhere from 69% to 83% depending on how the question is asked and average daily screen time around 6.5 hours; treat this as a directional read (heavy phone dependency, low Scripture engagement, same generation, same years), not a precise ratio.",
+    note: "Not a matched study — no single source compares phone time to Bible time in the same sample. Other surveys put Gen Z self-reported phone addiction anywhere from 69% to 83%. Read as directional, not a precise ratio.",
     points: [{ year: 2024, value: 83 }],
   },
   {
@@ -198,7 +198,7 @@ export const trends: TrendSeries[] = [
       url: "https://www.pewresearch.org/religion/2025/02/26/religious-landscape-study-executive-summary/",
       date: "2025-02-26",
     },
-    note: "Single-survey snapshot, not a trend over time — shows a steep generational gradient. Millennial figure is Pew's own imprecise 'more than half'; shown here as 54% per widely-cited secondary summaries of the same study, not a Pew-published exact number. Complements the 'nones-by-generation' trend above (same underlying decline, viewed from the Christian-identification side rather than the unaffiliated side).",
+    note: "Single-survey snapshot, not a trend over time. The Millennial figure is Pew's imprecise \"more than half\", shown here as 54% per widely-cited summaries of the same study.",
     points: [
       { year: 2024, label: "Gen Z", value: 45 },
       { year: 2024, label: "Millennial", value: 54 },
@@ -215,7 +215,7 @@ export const trends: TrendSeries[] = [
       url: "https://www.barna.com/research/gen-z-success/",
       date: "2024-01-01",
     },
-    note: "Cited alongside this map's church-attendance and Bible-engagement trends, not as proof of a causal link — Barna itself frames rising Gen Z mental-health strain as an opening for ministry, not a measured driver of the campus wave. 39% of Gen Z report frequent uncertainty about the future and frequent anxiety about decisions, more than double the combined Boomer/Elder rate (16%); 29% of Gen Z report frequent loneliness, roughly 3-7x the Boomer (8%) and Elder (4%) rates.",
+    note: "Context, not cause — Barna frames rising strain as an opening for ministry, not a measured driver of the campus wave. Gen Z reports roughly double the anxiety and 3-7x the loneliness of older generations.",
     points: [
       { year: 2024, label: "Gen Z: frequent anxiety", value: 39 },
       { year: 2024, label: "Boomer/Elder: frequent anxiety", value: 16 },
@@ -234,7 +234,7 @@ export const trends: TrendSeries[] = [
       url: "https://prri.org/spotlight/prri-generation-z-fact-sheet/",
       date: "2024-01-01",
     },
-    note: "The clearest published answer to 'who is this happening among': two-thirds of Gen Z is religiously affiliated at all, split across many small groups rather than one dominant tradition. White evangelical Protestants (10%) and Hispanic Catholics (9%) are the two largest single groups — both larger than any one racial/ethnic group within mainline Protestantism or Catholicism alone. Read alongside the gender-attendance trends elsewhere on this page: this shows the racial/denominational split, not the gender split, of the same generation.",
+    note: "The clearest published answer to \"who is this happening among.\" Two-thirds of Gen Z is affiliated at all, spread across many small groups rather than one dominant tradition. White evangelicals (10%) and Hispanic Catholics (9%) are the largest.",
     points: [
       { year: 2024, label: "White evangelical Protestant", value: 10 },
       { year: 2024, label: "Hispanic Catholic", value: 9 },
@@ -256,7 +256,7 @@ export const trends: TrendSeries[] = [
       url: "https://www.pewresearch.org/religion/2025/02/26/religious-landscape-study-executive-summary/",
       date: "2025-02-26",
     },
-    note: "A simple but important gap: 62% of US adults call themselves Christian, but only about 31% meet Pew's bar for 'highly religious' — the combined measure of praying daily, being certain God exists, calling religion very important, and attending services at least once or twice a month. In plain terms, roughly twice as many people identify as Christian as actually practice at a high level. Useful context for reading every attendance/decision/baptism number on this map: a big crowd at an event doesn't mean a big share of the country is deeply religious day-to-day.",
+    note: "62% of US adults call themselves Christian, but only ~31% meet Pew's bar for \"highly religious\" — daily prayer, certainty in God, religion very important, regular attendance. Roughly twice as many identify as practice.",
     points: [
       { year: 2024, label: "Identify as Christian", value: 62 },
       { year: 2024, label: "'Highly religious' (Pew)", value: 31 },
