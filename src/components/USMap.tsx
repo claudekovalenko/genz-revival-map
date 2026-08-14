@@ -270,11 +270,9 @@ export default function USMap({ events }: Props) {
       </div>
       {shadeMode === "momentum" && (
         <p className="text-xs text-black/40 dark:text-white/35 mt-2 max-w-2xl">
-          Momentum is derived from this dataset only: recent events count more than old ones, organic
-          outbreaks count more than booked touring stops, and places that hosted activity in 2+ separate
-          years get a bonus. It measures where documented activity is <em>building</em>, not just where the
-          most events ever happened. A pale state means nothing here got documented — which is not proof
-          nothing happened. See <Link to="/about" className="underline">methodology</Link>.
+          Weighted for recency, grassroots origin, and repeat activity — so it shows where things are{" "}
+          <em>building</em>, not lifetime totals. Pale = undocumented, not inactive.{" "}
+          <Link to="/about" className="underline">Methodology</Link>.
         </p>
       )}
       {shadeMode === "politics" && (

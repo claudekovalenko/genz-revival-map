@@ -23,8 +23,7 @@ export default function NplFilter({ value, onChange }: Props) {
         </button>
       </div>
       <p className="text-xs text-black/50 dark:text-white/40">
-        Isolate the No Place Left / e3 Partners disciple-making infrastructure entries — decentralized training
-        networks, not dated events.
+        Show only No Place Left / e3 Partners training networks — infrastructure, not dated events.
       </p>
     </div>
   );

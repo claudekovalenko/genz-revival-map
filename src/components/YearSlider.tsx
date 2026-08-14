@@ -12,25 +12,29 @@ type Props = {
 export default function YearSlider({ year, minYear, maxYear, mode, onYearChange, onModeChange }: Props) {
   return (
     <div className="w-full bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl px-4 py-3 flex flex-col gap-2">
-      <div className="flex items-center justify-between">
-        <span className="text-sm font-medium">
-          {mode === "cumulative" ? `Showing all events through` : `Showing events in`}{" "}
+      <div className="flex items-center justify-between gap-2">
+        <span className="text-sm font-medium whitespace-nowrap">
+          {mode === "cumulative" ? "Through" : "In"}{" "}
           <span className="text-lg font-semibold">{year}</span>
         </span>
-        <div className="flex text-xs rounded-full border border-black/10 dark:border-white/10 overflow-hidden">
+        <div className="flex text-xs rounded-full border border-black/10 dark:border-white/10 overflow-hidden shrink-0">
           <button
             type="button"
             onClick={() => onModeChange("cumulative")}
-            className={`px-3 py-1 ${mode === "cumulative" ? "bg-black text-white dark:bg-white dark:text-black" : ""}`}
+            className={`px-2.5 py-1 whitespace-nowrap ${
+              mode === "cumulative" ? "bg-black text-white dark:bg-white dark:text-black" : ""
+            }`}
           >
             Cumulative
           </button>
           <button
             type="button"
             onClick={() => onModeChange("single")}
-            className={`px-3 py-1 ${mode === "single" ? "bg-black text-white dark:bg-white dark:text-black" : ""}`}
+            className={`px-2.5 py-1 whitespace-nowrap ${
+              mode === "single" ? "bg-black text-white dark:bg-white dark:text-black" : ""
+            }`}
           >
-            Single year
+            One year
           </button>
         </div>
       </div>

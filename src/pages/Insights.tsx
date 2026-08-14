@@ -12,6 +12,12 @@ import {
 import { Link } from "react-router-dom";
 import { revivals } from "../data/revivals";
 import { trends } from "../data/trends";
+import {
+  momentumByState,
+  organicToOrganizedPipeline,
+  repeatSites,
+  seasonality,
+} from "../data/analysis";
 import { aggregateByState, baptismsPerYear, eventsPerYear, originByYear, totalDocumentedBaptisms } from "../data/utils";
 
 const barColor = "#7c3aed";
@@ -50,16 +56,92 @@ export default function Insights() {
   const religiousBreakdown = trends.find((t) => t.id === "genz-religious-affiliation-breakdown")!;
   const christianVsHighlyReligious = trends.find((t) => t.id === "christian-identity-vs-highly-religious")!;
 
+  const topMomentum = Array.from(momentumByState(revivals).values())
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3);
+  const provenSites = repeatSites(revivals);
+  const untestedCount = 50 - new Set(revivals.map((e) => e.stateCode)).size;
+  const season = seasonality(revivals);
+  const pipeline = organicToOrganizedPipeline(revivals);
+
   return (
     <div className="max-w-5xl mx-auto px-4 py-8 flex flex-col gap-10">
       <div>
         <h1 className="text-2xl md:text-3xl font-semibold tracking-tight">Patterns</h1>
         <p className="text-sm text-black/60 dark:text-white/50 mt-1 max-w-2xl">
-          Aggregate views across the documented events, plus the national survey data most often cited alongside
-          them. See <Link to="/about" className="underline">methodology</Link> for why these should be read as
-          directional signals, not a proof of a nationwide revival.
+          What the events add up to, plus the national survey data cited alongside them. Directional signals,
+          not proof of a nationwide revival — see <Link to="/about" className="underline">methodology</Link>.
         </p>
       </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <Finding title="Where it's building" lead={topMomentum.map((m) => m.stateCode).join(" · ")}>
+          Ranked by recent, grassroots and repeating activity — not lifetime totals. {topMomentum[0]?.stateName}{" "}
+          leads on both.
+        </Finding>
+        <Finding title="Proven ground" lead={`${provenSites.length} locations`}>
+          Hosted activity in two or more separate years — where something already caught and came back.
+        </Finding>
+        <Finding title="Untested" lead={`${untestedCount} states`}>
+          No documented activity. That means unmeasured, not inactive — and the cheapest place to learn
+          something new.
+        </Finding>
+      </div>
+
+      <ChartCard
+        title="It runs on the academic calendar"
+        subtitle="Every event by month — February and September carry the load; summer is nearly empty"
+      >
+        <ResponsiveContainer width="100%" height={220}>
+          <BarChart data={season}>
+            <CartesianGrid strokeDasharray="3 3" opacity={0.2} />
+            <XAxis dataKey="month" />
+            <YAxis allowDecimals={false} />
+            <Tooltip />
+            <Bar dataKey="count" radius={[4, 4, 0, 0]}>
+              {season.map((s) => (
+                <Cell key={s.month} fill={s.count >= 12 ? "#b91c1c" : "#d4d4d4"} />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+        <p className="text-xs text-black/50 dark:text-white/40 mt-2">
+          Two short windows a year. Planning on a fiscal or church calendar will miss them.
+        </p>
+      </ChartCard>
+
+      {pipeline.length > 0 && (
+        <ChartCard
+          title="Spontaneous first, organized about six months later"
+          subtitle={`The same sequence at ${pipeline.length} campuses, in ${
+            new Set(pipeline.map((p) => p.stateCode)).size
+          } states, in ${new Set(pipeline.map((p) => p.organicYear)).size} different years`}
+        >
+          <div className="flex flex-col gap-2">
+            {pipeline.map((p) => (
+              <div
+                key={`${p.city}-${p.stateCode}`}
+                className="flex items-center gap-2 flex-wrap text-sm bg-black/[0.03] dark:bg-white/[0.04] rounded-lg px-3 py-2"
+              >
+                <span className="font-medium min-w-[8.5rem]">
+                  {p.city}, {p.stateCode}
+                </span>
+                <Link to={`/event/${p.organicId}`} className="text-amber-700 dark:text-amber-500 underline">
+                  organic {p.organicYear}
+                </Link>
+                <span className="text-black/40 dark:text-white/30">→ {p.monthsBetween} mo →</span>
+                <Link to={`/event/${p.organizedId}`} className="text-sky-700 dark:text-sky-400 underline">
+                  organized {p.organizedYear}
+                </Link>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-black/50 dark:text-white/40 mt-2">
+            An unplanned outbreak is an early signal with a consistent lead time — roughly six months to move in
+            behind it.
+          </p>
+        </ChartCard>
+      )}
 
       <ChartCard title="Documented events per year" subtitle="Count of entries in this project's dataset, by year">
         <ResponsiveContainer width="100%" height={260}>
@@ -416,6 +498,24 @@ export default function Insights() {
           </li>
         </ul>
       </div>
+    </div>
+  );
+}
+
+function Finding({
+  title,
+  lead,
+  children,
+}: {
+  title: string;
+  lead: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-4">
+      <div className="text-xs font-medium text-black/50 dark:text-white/40">{title}</div>
+      <div className="text-lg font-semibold mt-0.5">{lead}</div>
+      <p className="text-xs text-black/60 dark:text-white/50 leading-relaxed mt-1.5">{children}</p>
     </div>
   );
 }
