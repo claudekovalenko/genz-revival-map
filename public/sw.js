@@ -13,7 +13,8 @@
  * visit, while a new deploy is picked up on the next load rather than pinned.
  */
 
-const VERSION = "v1";
+// Bump on deploy to drop the previous cache wholesale.
+const VERSION = "v2";
 const CACHE = `revival-map-${VERSION}`;
 const BASE = "/genz-revival-map/";
 const SHELL = BASE;
