@@ -28,7 +28,7 @@ export default function Layout() {
                 className={({ isActive }) =>
                   `px-3 py-1.5 rounded-full text-sm whitespace-nowrap shrink-0 transition-colors ${
                     isActive
-                      ? "bg-black text-white dark:bg-white dark:text-black"
+                      ? "bg-amber-100 text-amber-950 font-semibold dark:bg-amber-400/20 dark:text-amber-100"
                       : "hover:bg-black/5 dark:hover:bg-white/10"
                   }`
                 }
