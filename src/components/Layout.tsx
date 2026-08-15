@@ -28,8 +28,8 @@ export default function Layout() {
                 className={({ isActive }) =>
                   `px-3 py-1.5 rounded-full text-sm whitespace-nowrap shrink-0 transition-colors ${
                     isActive
-                      ? "bg-amber-100 text-amber-950 font-semibold dark:bg-amber-400/20 dark:text-amber-100"
-                      : "hover:bg-black/5 dark:hover:bg-white/10"
+                      ? "bg-amber-100 text-amber-950 font-semibold hover:bg-amber-200 dark:bg-amber-400/20 dark:text-amber-100 dark:hover:bg-amber-400/30"
+                      : "text-black/80 hover:bg-black/10 hover:text-black dark:text-white/70 dark:hover:bg-white/15 dark:hover:text-white"
                   }`
                 }
               >
