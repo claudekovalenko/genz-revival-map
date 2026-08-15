@@ -22,7 +22,7 @@ export default function YearSlider({ year, minYear, maxYear, mode, onYearChange,
             type="button"
             onClick={() => onModeChange("cumulative")}
             className={`px-2.5 py-1 whitespace-nowrap ${
-              mode === "cumulative" ? "bg-black text-white dark:bg-white dark:text-black" : ""
+              mode === "cumulative" ? "bg-amber-100 text-amber-950 font-semibold dark:bg-amber-400/20 dark:text-amber-100" : ""
             }`}
           >
             Cumulative
@@ -31,7 +31,7 @@ export default function YearSlider({ year, minYear, maxYear, mode, onYearChange,
             type="button"
             onClick={() => onModeChange("single")}
             className={`px-2.5 py-1 whitespace-nowrap ${
-              mode === "single" ? "bg-black text-white dark:bg-white dark:text-black" : ""
+              mode === "single" ? "bg-amber-100 text-amber-950 font-semibold dark:bg-amber-400/20 dark:text-amber-100" : ""
             }`}
           >
             One year

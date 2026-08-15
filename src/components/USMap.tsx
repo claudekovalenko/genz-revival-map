@@ -86,7 +86,7 @@ export default function USMap({ events }: Props) {
             onClick={() => setShadeMode(opt.value)}
             className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs sm:text-sm border-2 transition-colors ${
               shadeMode === opt.value
-                ? "bg-black text-white border-black dark:bg-white dark:text-black dark:border-white"
+                ? "bg-amber-100 text-amber-950 border-amber-500 font-semibold dark:bg-amber-400/20 dark:text-amber-100 dark:border-amber-400"
                 : "border-black/20 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/10"
             }`}
           >

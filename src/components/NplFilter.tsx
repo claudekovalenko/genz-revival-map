@@ -15,7 +15,7 @@ export default function NplFilter({ value, onChange }: Props) {
           aria-pressed={value}
           className={`px-3 py-1.5 rounded-full text-sm border transition-colors ${
             value
-              ? "bg-black text-white border-black dark:bg-white dark:text-black dark:border-white"
+              ? "bg-amber-100 text-amber-950 border-amber-500 font-semibold dark:bg-amber-400/20 dark:text-amber-100 dark:border-amber-400"
               : "border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/10"
           }`}
         >
