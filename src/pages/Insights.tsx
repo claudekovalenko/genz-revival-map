@@ -89,7 +89,7 @@ export default function Insights() {
       </div>
 
       <ChartCard
-        title="It runs on the academic calendar"
+        title="The fruit surfaces when students are gathered"
         subtitle="Every event by month — February and September carry the load; summer is nearly empty"
       >
         <ResponsiveContainer width="100%" height={220}>
@@ -106,7 +106,8 @@ export default function Insights() {
           </BarChart>
         </ResponsiveContainer>
         <p className="text-xs text-black/50 dark:text-white/40 mt-2">
-          Two short windows a year. Planning on a fiscal or church calendar will miss them.
+          This shows when students are present and reachable, not what moves them. Practically: be ready in
+          those weeks rather than hearing about a moment afterwards.
         </p>
       </ChartCard>
 
