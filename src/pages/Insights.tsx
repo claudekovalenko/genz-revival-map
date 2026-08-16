@@ -112,10 +112,8 @@ export default function Insights() {
 
       {pipeline.length > 0 && (
         <ChartCard
-          title="Spontaneous first, organized about six months later"
-          subtitle={`The same sequence at ${pipeline.length} campuses, in ${
-            new Set(pipeline.map((p) => p.stateCode)).size
-          } states, in ${new Set(pipeline.map((p) => p.organicYear)).size} different years`}
+          title="Spontaneous outbreak first, produced event later"
+          subtitle={`${pipeline.length} campuses where an unplanned outbreak was later followed by a touring stop — three cluster at 6-7 months, two took about three years`}
         >
           <div className="flex flex-col gap-2">
             {pipeline.map((p) => (
@@ -137,8 +135,8 @@ export default function Insights() {
             ))}
           </div>
           <p className="text-xs text-black/50 dark:text-white/40 mt-2">
-            An unplanned outbreak is an early signal with a consistent lead time — roughly six months to move in
-            behind it.
+            An outbreak marks a campus worth returning to, but the lag varies a lot. The tight six-month cases
+            may reflect an organizer already watching rather than a natural clock.
           </p>
         </ChartCard>
       )}

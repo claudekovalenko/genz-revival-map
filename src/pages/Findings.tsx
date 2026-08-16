@@ -9,14 +9,14 @@ type Finding = {
 const findings: Finding[] = [
   {
     claim: "It runs on the academic calendar — two windows a year.",
-    evidence: "February, September and January hold 45 of 70 events. June and August have one each. December has none.",
+    evidence: "February, September and January hold 45 of 73 events. June and August have one each. December has none.",
     soWhat: "Budget and staff to land in late January and early September. A fiscal-year rhythm arrives too late.",
   },
   {
-    claim: "Spontaneous first, organized about six months later.",
+    claim: "Spontaneous outbreaks get followed up — sometimes in months, sometimes in years.",
     evidence:
-      "Same sequence at three campuses, three states, three years: College Station (Feb→Sep 2023), Columbus (Aug 2024→Feb 2025), Pittsburgh (Sep 2025→Mar 2026).",
-    soWhat: "An unplanned outbreak is an early signal with a consistent lead time. Watch for them instead of picking campuses cold.",
+      "Five campuses had an unplanned outbreak and later a produced event. Three clustered tightly at six to seven months: College Station (Feb→Sep 2023), Columbus (Aug 2024→Feb 2025), Pittsburgh (Sep 2025→Mar 2026). Two took about three years: Samford and Baylor, both Feb 2023 outbreaks with Unite US stops in April 2026.",
+    soWhat: "An outbreak reliably marks a campus worth returning to, but the lead time is not fixed — the tight six-month cases may reflect an organizer already watching, not a natural clock. Treat it as a shortlist, not a countdown."
   },
   {
     claim: "Organized events happen every year. Organic outbreaks almost never do.",
@@ -81,7 +81,7 @@ const findings: Finding[] = [
   {
     claim: "A few repeat organizers account for most of the organized events.",
     evidence:
-      "Lou Engle's network produced The Call, Azusa Now and The Send. Jennie Allen's IF:Gathering connects to her co-hosting Texas A&M a decade later. Unite US alone carries 29% of all events here.",
+      "Lou Engle's network produced The Call, Azusa Now and The Send. Jennie Allen's IF:Gathering connects to her co-hosting Texas A&M a decade later. Unite US alone carries 30% of all events here.",
     soWhat: "Scale runs through a handful of long-running relationships. That's the fast path — and a concentration risk if the picture depends on one operator's calendar.",
   },
   {
@@ -138,7 +138,7 @@ export default function Findings() {
       <div className="bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-xl p-4 sm:p-5">
         <h2 className="font-semibold mb-1.5">The honest limit</h2>
         <p className="text-sm leading-relaxed text-black/70 dark:text-white/60">
-          70 press-covered events and a handful of national surveys — not a controlled study. It shows what got
+          73 press-covered events and a handful of national surveys — not a controlled study. It shows what got
           covered and the patterns inside that coverage. Nobody is counting the events that never got press.
         </p>
       </div>
