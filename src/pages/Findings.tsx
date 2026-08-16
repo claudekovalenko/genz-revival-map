@@ -8,27 +8,28 @@ type Finding = {
 
 const findings: Finding[] = [
   {
-    claim: "It runs on the academic calendar — two windows a year.",
+    claim: "No amount of programming has ever manufactured an outbreak.",
+    evidence:
+      "A produced event appears in nearly every year from 2012 on — a steady, well-funded circuit. Unplanned outbreaks are near-absent through all of it until February 2023, then arrive suddenly and taper. The circuit did not cause them.",
+    soWhat: "The thing that can be organized and the thing that actually broke out are different in kind. Budgets can build the room; they have never been what fills it this way.",
+  },
+  {
+    claim: "Every organic outbreak came through a specific opening — not general \"hunger.\"",
+    evidence:
+      "Two kinds only: a service given permission to keep going past its scheduled end (Asbury, and the campuses that followed within weeks), or a shared national shock (Charlie Kirk's assassination).",
+    soWhat: "You cannot schedule this, but you can refuse to stand in its way — chaplains free to let a service overrun, and people ready to respond within hours rather than weeks.",
+  },
+  {
+    claim: "The fruit surfaces when students are gathered — two windows a year.",
     evidence: "February, September and January hold 45 of 73 events. June and August have one each. December has none.",
-    soWhat: "Budget and staff to land in late January and early September. A fiscal-year rhythm arrives too late.",
+    soWhat:
+      "This describes when students are present and reachable, not what moves them. The practical consequence is only this: be ready and resourced in those weeks, rather than learning about a moment after it has passed.",
   },
   {
-    claim: "Spontaneous outbreaks get followed up — sometimes in months, sometimes in years.",
+    claim: "Outbreaks get followed up — sometimes in months, sometimes in years.",
     evidence:
-      "Five campuses had an unplanned outbreak and later a produced event. Three clustered tightly at six to seven months: College Station (Feb→Sep 2023), Columbus (Aug 2024→Feb 2025), Pittsburgh (Sep 2025→Mar 2026). Two took about three years: Samford and Baylor, both Feb 2023 outbreaks with Unite US stops in April 2026.",
-    soWhat: "An outbreak reliably marks a campus worth returning to, but the lead time is not fixed — the tight six-month cases may reflect an organizer already watching, not a natural clock. Treat it as a shortlist, not a countdown."
-  },
-  {
-    claim: "Organized events happen every year. Organic outbreaks almost never do.",
-    evidence:
-      "A produced event appears in nearly every year from 2012 on. Unplanned outbreaks are near-absent until February 2023, then spike and taper.",
-    soWhat: "A steady circuit of big events produces a steady circuit of big events. What's scarce is the conditions that let an unplanned moment run long.",
-  },
-  {
-    claim: "Every organic outbreak had a specific trigger — not general \"hunger.\"",
-    evidence:
-      "Two kinds only: an unscripted service given permission to keep going (Asbury and the campuses that followed within weeks), or a shared national shock (Charlie Kirk's assassination).",
-    soWhat: "You can't schedule one, but you can be ready: chaplains free to let a service overrun, and response networks that can move within hours.",
+      "Five campuses had an unplanned outbreak and later a produced event. Three clustered at six to seven months: College Station (Feb→Sep 2023), Columbus (Aug 2024→Feb 2025), Pittsburgh (Sep 2025→Mar 2026). Two took about three years: Samford and Baylor, both Feb 2023 outbreaks with Unite US stops in April 2026.",
+    soWhat: "An outbreak marks a campus worth returning to, but the lead time is not fixed — the tight cases may reflect an organizer already watching, not a natural clock. A shortlist, not a countdown.",
   },
   {
     claim: "Once a ministry finds a receptive campus, growth compounds fast.",
@@ -112,6 +113,16 @@ export default function Findings() {
           <Link to="/about" className="underline">
             Caveats
           </Link>
+        </p>
+      </div>
+
+      <div className="bg-amber-50 dark:bg-amber-400/10 border border-amber-500/40 rounded-xl p-4 sm:p-5">
+        <h2 className="font-semibold mb-1.5">Read these as fruit, not as cause.</h2>
+        <p className="text-sm leading-relaxed text-black/75 dark:text-white/70">
+          Revival is the Lord's work. Nothing below explains it, predicts it, or produces it. What this page
+          documents is the fruit as it appeared in public reporting — where it showed up, what surrounded it,
+          and what that suggests about stewarding it well. Where a pattern lines up with a semester or a
+          calendar, that describes when students happened to be gathered, not what moved them.
         </p>
       </div>
 

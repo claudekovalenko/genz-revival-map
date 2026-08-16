@@ -90,7 +90,7 @@ export default function Home() {
             {topStates.map((s) => s.stateName).join(", ")} — ranked by recent, grassroots, and repeat activity.
           </Point>
           <Point n="2" label="Two windows a year">
-            Activity clusters in February and September. Summer is nearly empty.
+            Documented activity clusters in February and September — when students are gathered.
           </Point>
           <Point n="3" label="Direction">
             {trend.direction === "accelerating"
